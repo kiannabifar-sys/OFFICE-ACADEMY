@@ -3,542 +3,588 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10152b">
-<meta name="description" content="آکادمی رایگان یادگیری نرم‌افزارهای آفیس، طراحی، ابزارهای گوگل و هوش مصنوعی">
-<title>OFFICE ACADEMY X | آکادمی مهارت‌های دیجیتال</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="آکادمی جامع یادگیری Word، Excel، PowerPoint، طراحی، ابزارهای دیجیتال و هوش مصنوعی">
+<title>OFFICE ACADEMY X PRO | آکادمی مهارت‌های دیجیتال</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
- --bg:#f5f7ff;--surface:#fff;--surface2:#eef1ff;--text:#17203b;
- --muted:#68718c;--border:#e2e6f2;--primary:#6557f5;--primary2:#8a63ff;
- --cyan:#16c9d5;--green:#19b987;--orange:#ff9c43;--pink:#fa67ad;
- --shadow:0 14px 40px rgba(32,40,90,.09);
+ --bg:#f5f6ff;--panel:#fff;--panel2:#edf0ff;--text:#171d37;--muted:#737b98;
+ --line:#e2e6f3;--purple:#7057ff;--cyan:#20d6d2;--pink:#ff67b3;
+ --green:#19b887;--orange:#ffad53;--shadow:0 18px 55px #2229520c;
 }
 body.dark{
- --bg:#0c1020;--surface:#141a2e;--surface2:#1c2440;--text:#f3f5ff;
- --muted:#a2acc9;--border:#2b3555;--shadow:0 15px 40px #0003;
+ --bg:#090d19;--panel:#12182a;--panel2:#1b2440;--text:#f5f6ff;--muted:#a0aac8;
+ --line:#28334f;--shadow:0 18px 55px #0003;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:95px}
-body{margin:0;font-family:'Vazirmatn',sans-serif;background:var(--bg);color:var(--text);transition:.25s;line-height:1.9}
-button,input,select{font:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Vazirmatn,sans-serif;line-height:1.9;transition:background .25s,color .25s}
+button,input,select,textarea{font:inherit}
+button,a{ -webkit-tap-highlight-color:transparent}
 button{cursor:pointer}
 a{color:inherit;text-decoration:none}
-.container{width:min(1200px,92%);margin:auto}
-.topbar{background:#11162d;color:#fff;text-align:center;padding:8px 12px;font-size:12px}
-.topbar strong{color:#7ee9ef}
-header{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}
-.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.5px}
-.logo{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;color:white;font-size:22px;background:linear-gradient(135deg,var(--primary),var(--cyan));box-shadow:0 7px 20px #6557f544}
-.brand small{display:block;font-size:10px;color:var(--muted);font-weight:600;letter-spacing:0}
-.navlinks{display:flex;align-items:center;gap:19px;font-size:13px;font-weight:700;color:var(--muted)}
-.navlinks a:hover{color:var(--primary)}
-.navactions{display:flex;gap:8px;align-items:center}
-.iconbtn{width:40px;height:40px;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:13px}
-.btn{border:0;border-radius:13px;padding:11px 17px;font-weight:800;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
+.container{width:min(1240px,92%);margin:auto}
+.topline{background:#0a1023;color:#dfe5ff;text-align:center;padding:8px;font-size:12px}
+.topline b{color:#67e8e3}
+header{position:sticky;top:0;z-index:30;background:var(--panel);border-bottom:1px solid var(--line)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;gap:10px;align-items:center;font-weight:900;letter-spacing:-.5px}
+.logo{display:grid;place-items:center;width:45px;height:45px;border-radius:15px;background:linear-gradient(135deg,var(--purple),var(--cyan));color:white;font-size:25px;box-shadow:0 8px 22px #7057ff40}
+.brand small{display:block;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:0}
+.navlinks{display:flex;gap:17px;color:var(--muted);font-size:12px;font-weight:800}
+.navlinks a:hover{color:var(--purple)}
+.actions{display:flex;gap:8px;align-items:center}
+.iconbtn{width:41px;height:41px;border:1px solid var(--line);border-radius:13px;background:var(--panel);color:var(--text)}
+.btn{border:0;border-radius:13px;padding:11px 16px;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:.2s}
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{color:white;background:linear-gradient(135deg,var(--primary),var(--primary2));box-shadow:0 8px 22px #6557f533}
-.btn-soft{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
-.hero{position:relative;overflow:hidden;padding:66px 0 55px;background:radial-gradient(ellipse at 80% 15%,#7464ff24,transparent 35%),radial-gradient(ellipse at 15% 80%,#12cbd51c,transparent 35%)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:38px}
-.eyebrow{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:50px;background:var(--surface);border:1px solid var(--border);color:var(--primary);font-weight:800;font-size:12px}
-.hero h1{font-size:clamp(35px,5vw,62px);line-height:1.35;letter-spacing:-1.8px;margin:19px 0}
-.gradient-text{background:linear-gradient(110deg,var(--primary),#a15cff,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{font-size:16px;max-width:650px;color:var(--muted);line-height:2.2}
-.hero-buttons{display:flex;gap:11px;flex-wrap:wrap;margin:24px 0}
-.hero-stats{display:flex;gap:25px;flex-wrap:wrap;margin-top:27px}
-.stat strong{display:block;font-size:23px;font-weight:900}
-.stat span{font-size:12px;color:var(--muted)}
-.visual{position:relative;min-height:365px;display:grid;place-items:center}
-.orb{position:absolute;width:280px;height:280px;border-radius:50%;background:linear-gradient(135deg,#6658f5,#18cbd5);filter:blur(1px);opacity:.18}
-.dashboard{position:relative;width:min(100%,410px);padding:22px;border-radius:25px;border:1px solid var(--border);background:var(--surface);box-shadow:var(--shadow);transform:rotate(-2deg);animation:float 5s ease-in-out infinite}
-@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(0deg)}}
-.dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.dash-top strong{font-size:14px}
-.live{font-size:10px;color:var(--green);background:#19b98718;padding:5px 9px;border-radius:20px}
-.progress-line{height:8px;background:var(--surface2);border-radius:10px;overflow:hidden;margin:9px 0 18px}
-.progress-line span{display:block;height:100%;width:63%;border-radius:10px;background:linear-gradient(90deg,var(--primary),var(--cyan))}
-.mini-course{display:flex;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--border)}
-.mini-icon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;font-size:22px}
-.mini-course strong{display:block;font-size:12px}
-.mini-course small{color:var(--muted);font-size:10px}
-.float-tag{position:absolute;padding:10px 15px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);font-size:12px;font-weight:800}
-.tag-one{top:30px;right:-2px}.tag-two{bottom:28px;left:-8px}
-.section{padding:64px 0}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:26px}
-.kicker{font-size:11px;letter-spacing:1px;color:var(--primary);font-weight:900}
-.section h2{font-size:clamp(24px,3vw,35px);line-height:1.5;margin:5px 0;font-weight:900}
-.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.stat-card{padding:20px;border:1px solid var(--border);border-radius:19px;background:var(--surface)}
-.stat-card .big{font-size:29px;font-weight:900}
-.stat-card p{margin:0;color:var(--muted);font-size:12px}
-.stat-icon{font-size:24px}
-.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
-.searchbox{flex:1;min-width:220px;position:relative}
-.searchbox input{width:100%;padding:13px 43px 13px 15px;background:var(--surface);border:1px solid var(--border);border-radius:14px;color:var(--text);outline:none}
-.searchbox input:focus{border-color:var(--primary)}
-.search-icon{position:absolute;right:15px;top:10px}
-select{padding:12px 15px;border:1px solid var(--border);border-radius:14px;background:var(--surface);color:var(--text);outline:none;max-width:100%}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:23px}
-.filter{border:1px solid var(--border);border-radius:30px;padding:8px 14px;background:var(--surface);color:var(--muted);font-size:12px;font-weight:800}
-.filter.active{background:var(--primary);border-color:var(--primary);color:#fff}
-.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.course-card{position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--border);border-radius:21px;padding:21px;transition:.25s}
-.course-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#9c91ff}
-.card-top{display:flex;justify-content:space-between;align-items:center}
-.app-icon{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;font-size:29px}
-.level{font-size:10px;background:var(--surface2);padding:5px 9px;border-radius:20px;color:var(--muted);font-weight:800}
-.course-card h3{margin:15px 0 3px;font-size:18px}
-.course-card p{font-size:12px;line-height:2;color:var(--muted);min-height:49px;margin:5px 0 15px}
-.course-meta{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--muted);margin-bottom:13px}
-.card-progress{height:5px;background:var(--surface2);border-radius:10px;overflow:hidden;margin-bottom:15px}
-.card-progress span{height:100%;display:block;background:linear-gradient(90deg,var(--primary),var(--cyan))}
-.card-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.card-bottom small{color:var(--muted);font-size:11px}
-.empty{padding:35px;text-align:center;border:1px dashed var(--border);border-radius:18px;color:var(--muted);grid-column:1/-1}
-.banner{padding:30px;border-radius:25px;background:linear-gradient(120deg,#211d57,#5142b9 55%,#087d91);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden;position:relative}
-.banner h2{margin:0;font-size:27px}
-.banner p{font-size:13px;opacity:.8;max-width:600px}
-.banner-art{font-size:65px;filter:drop-shadow(0 10px 20px #0004)}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.panel{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:23px}
-.panel h3{margin-top:0}
-.lesson-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
-.lesson-row:last-child{border-bottom:0}
-.lesson-num{width:37px;height:37px;border-radius:12px;background:var(--surface2);display:grid;place-items:center;font-weight:900;color:var(--primary);flex-shrink:0}
-.lesson-row strong{display:block;font-size:13px}
-.lesson-row small{color:var(--muted);font-size:11px}
-.lesson-row button{margin-right:auto}
-.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.project{background:var(--surface);border:1px solid var(--border);border-radius:19px;padding:21px}
-.project .emoji{font-size:32px}
-.project h3{font-size:16px}
-.project p{font-size:12px;color:var(--muted);line-height:2}
-.project ol{padding-right:19px;font-size:12px;color:var(--muted)}
+.primary{color:#fff;background:linear-gradient(125deg,var(--purple),#9a5cff);box-shadow:0 8px 22px #7057ff30}
+.soft{background:var(--panel2);color:var(--text);border:1px solid var(--line)}
+.danger{color:#e05b75;background:#e05b7515;border:1px solid #e05b7530}
+.hero{padding:65px 0 50px;overflow:hidden;background:radial-gradient(ellipse at 90% 5%,#7057ff24,transparent 35%),radial-gradient(ellipse at 5% 90%,#20d6d220,transparent 35%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px}
+.pill{display:inline-flex;gap:8px;align-items:center;padding:6px 12px;border:1px solid var(--line);border-radius:30px;background:var(--panel);color:var(--purple);font-size:11px;font-weight:900}
+h1{font-size:clamp(35px,5.5vw,65px);line-height:1.32;letter-spacing:-2px;margin:18px 0}
+.gradient{background:linear-gradient(110deg,var(--purple),#b24fff,var(--cyan));background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:650px;font-size:14px;line-height:2.3}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.hero-numbers{display:flex;gap:26px;flex-wrap:wrap;margin-top:25px}
+.hero-numbers strong{display:block;font-size:23px;font-weight:900}
+.hero-numbers span{font-size:11px;color:var(--muted)}
+.art{min-height:365px;display:grid;place-items:center;position:relative}
+.orb{position:absolute;width:270px;height:270px;border-radius:50%;background:linear-gradient(140deg,var(--purple),var(--cyan));opacity:.16;filter:blur(3px)}
+.dash{position:relative;width:min(100%,410px);padding:23px;background:var(--panel);border:1px solid var(--line);border-radius:25px;box-shadow:var(--shadow);animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+.dash-head{display:flex;align-items:center;justify-content:space-between;font-weight:900;font-size:13px}
+.status{color:var(--green);background:#19b88717;border-radius:20px;padding:4px 9px;font-size:10px}
+.progress{height:8px;background:var(--panel2);border-radius:20px;overflow:hidden}
+.progress span{height:100%;display:block;width:0;background:linear-gradient(90deg,var(--purple),var(--cyan));border-radius:20px;transition:width .4s}
+.dash-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.dash-row:last-child{border-bottom:0}
+.dash-icon{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;font-size:23px}
+.dash-row strong{font-size:12px;display:block}
+.dash-row small{font-size:10px;color:var(--muted)}
+.floating{position:absolute;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:9px 13px;box-shadow:var(--shadow);font-size:11px;font-weight:900}
+.floating.one{top:30px;right:-4px}.floating.two{bottom:27px;left:-6px}
+.section{padding:56px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:24px}
+.eyebrow{font-size:10px;letter-spacing:1px;color:var(--purple);font-weight:900}
+h2{font-size:clamp(23px,3vw,34px);line-height:1.5;margin:5px 0;font-weight:900}
+.section-head p{font-size:12px;color:var(--muted);margin:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat-card{padding:19px;border:1px solid var(--line);border-radius:19px;background:var(--panel)}
+.stat-card .symbol{font-size:23px}
+.stat-card strong{font-size:28px;display:block;font-weight:900}
+.stat-card small{font-size:11px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:1fr 300px;gap:22px;align-items:start}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px}
+.search{position:relative;flex:1;min-width:190px}
+.search input{width:100%;padding:12px 40px 12px 12px;border:1px solid var(--line);border-radius:13px;background:var(--panel);color:var(--text);outline:none}
+.search span{position:absolute;right:14px;top:8px}
+select{padding:11px;border:1px solid var(--line);border-radius:13px;background:var(--panel);color:var(--text);max-width:100%}
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+.filter{padding:7px 12px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:30px;font-size:11px;font-weight:800}
+.filter.active{background:var(--purple);color:white;border-color:var(--purple)}
+.courses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.course{padding:19px;border:1px solid var(--line);border-radius:20px;background:var(--panel);transition:.25s;overflow:hidden;position:relative}
+.course:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#a69aff}
+.course-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.app-icon{width:55px;height:55px;border-radius:16px;display:grid;place-items:center;font-size:27px}
+.level{font-size:10px;color:var(--muted);background:var(--panel2);border-radius:30px;padding:4px 8px}
+.course h3{font-size:16px;margin:12px 0 3px}
+.course p{font-size:11px;line-height:2;color:var(--muted);min-height:45px;margin:4px 0 12px}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:9px;padding:3px 7px;border:1px solid var(--line);border-radius:30px;color:var(--muted)}
+.course-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px}
+.course-bottom small{font-size:10px;color:var(--muted)}
+.star{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:10px;padding:7px 9px}
+.star.on{color:#d99a16}
+.sidebar{display:grid;gap:14px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px}
+.panel h3{margin:0 0 12px;font-size:15px}
+.panel p{font-size:11px;color:var(--muted);line-height:2}
+.panel-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.panel-row:last-child{border:0}
+.panel-row .mini{width:35px;height:35px;display:grid;place-items:center;background:var(--panel2);border-radius:11px}
+.panel-row strong{font-size:11px;display:block}
+.panel-row small{font-size:10px;color:var(--muted)}
+.banner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:29px;border-radius:24px;background:linear-gradient(120deg,#211b57,#5140b6 55%,#087d8e);color:white;overflow:hidden}
+.banner h2{margin:0;font-size:25px}
+.banner p{font-size:12px;opacity:.82;max-width:650px}
+.banner .big-icon{font-size:64px}
+.roadmap,.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.road-card,.project{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:19px}
+.road-card .n{width:39px;height:39px;display:grid;place-items:center;background:var(--panel2);color:var(--purple);border-radius:12px;font-weight:900}
+.road-card h3,.project h3{font-size:14px}
+.road-card p,.project p{font-size:11px;line-height:2;color:var(--muted)}
+.project .emoji{font-size:30px}
+.project ol{padding-right:20px;color:var(--muted);font-size:11px}
 .project li{padding:3px 0}
-.tip{padding:15px;border-radius:14px;background:var(--surface2);font-size:12px;color:var(--muted)}
-.faq{border:1px solid var(--border);background:var(--surface);border-radius:15px;margin:10px 0;overflow:hidden}
-.faq summary{cursor:pointer;padding:15px;font-weight:800;font-size:13px}
-.faq p{padding:0 15px 15px;color:var(--muted);font-size:12px;margin:0}
-footer{padding:35px 0;background:#10152b;color:#e7eaff;margin-top:40px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}
-footer p,footer a{color:#aab4d4;font-size:12px}
-footer h4{margin:0 0 10px}
+.faq{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:9px 0}
+.faq summary{padding:13px;cursor:pointer;font-weight:800;font-size:12px}
+.faq p{font-size:11px;color:var(--muted);padding:0 13px 13px;margin:0}
+footer{background:#0b1020;color:#e9ecff;padding:35px 0;margin-top:30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px}
+footer p,footer a{font-size:11px;color:#a6b0d0}
 footer a{display:block;margin:7px 0}
-.footer-bottom{border-top:1px solid #303754;margin-top:25px;padding-top:15px;font-size:11px;color:#8c98bd}
-.modal-backdrop{position:fixed;inset:0;background:#080b19c9;z-index:50;display:none;align-items:center;justify-content:center;padding:15px}
-.modal-backdrop.open{display:flex}
-.modal{background:var(--surface);color:var(--text);border-radius:24px;width:min(760px,100%);max-height:90vh;overflow:auto;padding:26px;box-shadow:0 25px 100px #0005}
-.modal-head{display:flex;justify-content:space-between;gap:12px;align-items:start;border-bottom:1px solid var(--border);padding-bottom:15px}
-.modal-head h2{margin:0;font-size:23px}
-.modal-content h3{margin-top:23px}
-.modal-content p,.modal-content li{font-size:14px;line-height:2.2;color:var(--muted)}
-.modal-content code{background:var(--surface2);padding:3px 7px;border-radius:6px;direction:ltr;display:inline-block}
-.lesson-nav{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0}
-.lesson-nav button{padding:8px 12px;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:10px;font-size:12px}
-.lesson-nav button.active{background:var(--primary);color:white}
-.quiz-option{display:block;width:100%;text-align:right;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--text);padding:11px 13px;margin:8px 0;font-size:13px}
-.quiz-option:hover{border-color:var(--primary)}
-.quiz-option.correct{border-color:var(--green);background:#19b98718}
-.quiz-option.wrong{border-color:#f56c6c;background:#f56c6c18}
-.notice{padding:12px 15px;border-radius:12px;background:var(--surface2);font-size:12px;color:var(--muted)}
-.toast{position:fixed;bottom:20px;left:20px;background:#151b32;color:white;padding:12px 17px;border-radius:13px;z-index:80;box-shadow:var(--shadow);opacity:0;transform:translateY(20px);transition:.25s;pointer-events:none;font-size:12px}
+.footer-bottom{border-top:1px solid #303957;padding-top:15px;margin-top:23px;color:#8793b9;font-size:10px}
+.modal-bg{position:fixed;inset:0;background:#070a18d9;z-index:80;display:none;align-items:center;justify-content:center;padding:14px}
+.modal-bg.open{display:flex}
+.modal{width:min(850px,100%);max-height:93vh;overflow:auto;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:23px;padding:23px;box-shadow:0 30px 100px #0005}
+.modal-head{display:flex;justify-content:space-between;gap:12px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:13px}
+.modal-head h2{font-size:23px;margin:2px 0}
+.modal-head small{font-size:10px;color:var(--purple);font-weight:900}
+.lesson-tabs{display:flex;gap:7px;overflow-x:auto;padding:13px 0}
+.lesson-tab{white-space:nowrap;border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:7px 10px;border-radius:10px;font-size:10px}
+.lesson-tab.active{background:var(--purple);border-color:var(--purple);color:#fff}
+.lesson-body h3{font-size:16px;margin:22px 0 5px}
+.lesson-body p,.lesson-body li{font-size:12px;line-height:2.2;color:var(--muted)}
+.lesson-body ul,.lesson-body ol{padding-right:22px}
+.lesson-callout{background:var(--panel2);border:1px solid var(--line);padding:14px;border-radius:14px;margin:12px 0;font-size:12px}
+.lesson-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.quiz-option{width:100%;text-align:right;display:block;margin:7px 0;padding:10px 12px;border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--text);font-size:12px}
+.quiz-option.correct{border-color:var(--green);background:#19b88717}
+.quiz-option.wrong{border-color:#ef6176;background:#ef617617}
+#notes{width:100%;min-height:100px;resize:vertical;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text);padding:12px}
+.toast{position:fixed;bottom:20px;left:20px;background:#151b32;color:white;padding:12px 16px;border-radius:13px;z-index:100;box-shadow:var(--shadow);font-size:12px;opacity:0;transform:translateY(15px);transition:.2s;pointer-events:none}
 .toast.show{opacity:1;transform:translateY(0)}
-#backTop{position:fixed;bottom:20px;right:20px;z-index:15;border:0;background:var(--primary);color:white;border-radius:14px;width:43px;height:43px;box-shadow:var(--shadow);display:none}
-@media(max-width:900px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr}.visual{min-height:330px}.course-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.nav{min-height:65px}.brand{font-size:13px}.logo{width:39px;height:39px}.navactions .btn{display:none}.hero{padding-top:42px}.hero p{font-size:14px}.visual{min-height:300px}.dashboard{padding:17px}.float-tag{font-size:10px}.section{padding:43px 0}.section-head{align-items:start;flex-direction:column}.course-grid,.project-grid,.two-col{grid-template-columns:1fr}.course-card{padding:18px}.banner{padding:22px}.banner h2{font-size:21px}.banner-art{font-size:42px}.footer-grid{grid-template-columns:1fr}.stats-grid{gap:10px}.stat-card{padding:14px}.stat-card .big{font-size:24px}.modal{padding:19px}}
+#backTop{position:fixed;bottom:20px;right:20px;z-index:20;display:none;background:var(--purple);color:white;border:0;border-radius:13px;width:43px;height:43px}
+.empty{grid-column:1/-1;padding:30px;border:1px dashed var(--line);border-radius:18px;text-align:center;color:var(--muted)}
+@media(max-width:1000px){.navlinks{display:none}.layout{grid-template-columns:1fr}.sidebar{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{grid-template-columns:1fr}.art{min-height:330px}}
+@media(max-width:650px){.hero{padding:42px 0}.section{padding:40px 0}.courses{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.roadmap,.projects{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.footer-grid{grid-template-columns:1fr}.banner{padding:20px}.banner h2{font-size:20px}.banner .big-icon{font-size:40px}.hero-numbers{gap:17px}.actions .primary{display:none}.modal{padding:17px}.course p{min-height:0}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<div class="topbar">🚀 نسخه ویژه آکادمی <strong>OFFICE ACADEMY X</strong> — یادگیری مهارت‌های دیجیتال، قدم‌به‌قدم و رایگان</div>
+<div class="topline">✨ <b>OFFICE ACADEMY X PRO</b> — از اولین قدم تا مهارت‌های پیشرفته، با تمرین واقعی</div>
 <header>
- <div class="container nav">
-  <a href="#" class="brand"><span class="logo">✦</span><span>OFFICE ACADEMY X<small>آکادمی مهارت‌های دیجیتال</small></span></a>
-  <nav class="navlinks">
-   <a href="#courses">دوره‌ها</a><a href="#learning">مسیر یادگیری</a><a href="#projects">پروژه‌ها</a><a href="#faq">سؤالات</a>
-  </nav>
-  <div class="navactions">
-   <button class="iconbtn" id="themeBtn" aria-label="تغییر تم">🌙</button>
-   <a class="btn btn-primary" href="#courses">شروع یادگیری ←</a>
-  </div>
- </div>
+<div class="container nav">
+ <a class="brand" href="#"><span class="logo">✦</span><span>OFFICE ACADEMY X<small>PRO LEARNING PLATFORM</small></span></a>
+ <nav class="navlinks"><a href="#courses">دوره‌ها</a><a href="#roadmap">مسیر یادگیری</a><a href="#projects">پروژه‌ها</a><a href="#faq">راهنما</a></nav>
+ <div class="actions"><button class="iconbtn" id="themeBtn" title="تغییر حالت">🌙</button><button class="iconbtn" onclick="exportProgress()" title="خروجی پیشرفت">⬇</button><a class="btn primary" href="#courses">شروع یادگیری ←</a></div>
+</div>
 </header>
-
 <main>
 <section class="hero">
- <div class="container hero-grid">
-  <div>
-   <span class="eyebrow">✨ آینده دیجیتال از اینجا شروع می‌شود</span>
-   <h1>مهارت یاد بگیر؛<br><span class="gradient-text">حرفه‌ای خلق کن!</span></h1>
-   <p>از اولین سند Word تا ارائه‌های حرفه‌ای، تحلیل داده در Excel، طراحی گرافیکی و کار با هوش مصنوعی؛ همه‌چیز را در یک آکادمی یاد بگیر و با پروژه‌های واقعی تمرین کن.</p>
-   <div class="hero-buttons">
-    <a href="#courses" class="btn btn-primary">🎓 مشاهده دوره‌ها</a>
-    <a href="#projects" class="btn btn-soft">🧩 پروژه‌های عملی</a>
-   </div>
-   <div class="hero-stats">
-    <div class="stat"><strong id="heroCourseCount">۱۰</strong><span>مسیر آموزشی</span></div>
-    <div class="stat"><strong>رایگان</strong><span>برای شروع یادگیری</span></div>
-    <div class="stat"><strong>۲۴/۷</strong><span>دسترسی به محتوا</span></div>
-   </div>
-  </div>
-  <div class="visual">
-   <div class="orb"></div>
-   <div class="float-tag tag-one">⚡ یادگیری هوشمند</div>
-   <div class="dashboard">
-    <div class="dash-top"><strong>📊 داشبورد یادگیری تو</strong><span class="live">● فعال</span></div>
-    <div style="font-size:12px;color:var(--muted)">پیشرفت کلی دوره‌ها</div>
-    <div class="progress-line"><span id="heroProgress"></span></div>
-    <div style="display:flex;justify-content:space-between;font-size:11px"><span>میزان پیشرفت</span><strong id="heroProgressText">۰٪</strong></div>
-    <div class="mini-course"><div class="mini-icon" style="background:#2b63d91b">📘</div><div><strong>Microsoft Word</strong><small>سندهای حرفه‌ای بساز</small></div><span style="margin-right:auto">↗</span></div>
-    <div class="mini-course"><div class="mini-icon" style="background:#18a77c1b">📈</div><div><strong>Microsoft Excel</strong><small>داده‌ها را هوشمندانه تحلیل کن</small></div><span style="margin-right:auto">↗</span></div>
-    <div class="mini-course"><div class="mini-icon" style="background:#8c58ec1b">🤖</div><div><strong>هوش مصنوعی</strong><small>ایده‌ها را به نتیجه تبدیل کن</small></div><span style="margin-right:auto">↗</span></div>
-   </div>
-   <div class="float-tag tag-two">🏆 هر درس، یک قدم جلوتر</div>
-  </div>
+<div class="container hero-grid">
+ <div>
+  <span class="pill">⚡ نسخه PRO · یادگیری مرحله‌به‌مرحله</span>
+  <h1>یاد بگیر.<br><span class="gradient">تمرین کن. حرفه‌ای شو.</span></h1>
+  <p>یک مرکز یادگیری برای نرم‌افزارهای آفیس، طراحی، ابزارهای همکاری و هوش مصنوعی. مسیر خودت را انتخاب کن، درس‌ها را کامل کن، یادداشت بنویس و با پروژه‌های واقعی مهارتت را بساز.</p>
+  <div class="hero-buttons"><a class="btn primary" href="#courses">🚀 کشف دوره‌ها</a><a class="btn soft" href="#projects">🧩 ورود به کارگاه پروژه</a></div>
+  <div class="hero-numbers"><div><strong id="heroCourseCount">۱۰</strong><span>مسیر آموزشی</span></div><div><strong id="heroLessonCount">۹۰</strong><span>درس موضوعی</span></div><div><strong>۳ سطح</strong><span>مقدماتی تا پیشرفته</span></div></div>
  </div>
+ <div class="art"><div class="orb"></div><div class="floating one">🏆 مسیر رشد تو</div>
+  <div class="dash">
+   <div class="dash-head"><span>📊 داشبورد یادگیری</span><span class="status">● فعال</span></div>
+   <p style="font-size:11px;color:var(--muted);margin-bottom:7px">پیشرفت کل دوره‌ها</p>
+   <div class="progress"><span id="heroBar"></span></div>
+   <div style="display:flex;justify-content:space-between;font-size:10px;margin:7px 0 15px"><span>میزان تکمیل</span><b id="heroPct">۰٪</b></div>
+   <div class="dash-row"><div class="dash-icon" style="background:#2864d71c">📘</div><div><strong>Microsoft Word</strong><small>از سند ساده تا قالب‌بندی حرفه‌ای</small></div></div>
+   <div class="dash-row"><div class="dash-icon" style="background:#16865b1c">📊</div><div><strong>Microsoft Excel</strong><small>از فرمول تا داشبورد داده</small></div></div>
+   <div class="dash-row"><div class="dash-icon" style="background:#8b5cf61c">🤖</div><div><strong>هوش مصنوعی</strong><small>پرسش دقیق و استفاده مسئولانه</small></div></div>
+  </div><div class="floating two">✨ هر روز یک قدم جلوتر</div>
+ </div>
+</div>
 </section>
 
-<section class="section" style="padding-top:25px">
- <div class="container stats-grid">
-  <div class="stat-card"><span class="stat-icon">📚</span><div class="big" id="statCourses">۱۰</div><p>دوره برای انتخاب</p></div>
-  <div class="stat-card"><span class="stat-icon">🧠</span><div class="big" id="statLessons">۳۰+</div><p>درس آموزشی و تمرینی</p></div>
-  <div class="stat-card"><span class="stat-icon">🎯</span><div class="big" id="statDone">۰</div><p>درس تکمیل‌شده توسط تو</p></div>
-  <div class="stat-card"><span class="stat-icon">🔥</span><div class="big" id="statPercent">۰٪</div><p>پیشرفت کلی یادگیری</p></div>
- </div>
+<section class="section" style="padding-top:22px">
+<div class="container stats">
+ <div class="stat-card"><span class="symbol">📚</span><strong id="sCourses">۱۰</strong><small>مسیر آموزشی</small></div>
+ <div class="stat-card"><span class="symbol">🧠</span><strong id="sLessons">۹۰</strong><small>درس موضوعی</small></div>
+ <div class="stat-card"><span class="symbol">🎯</span><strong id="sDone">۰</strong><small>درس تکمیل‌شده</small></div>
+ <div class="stat-card"><span class="symbol">🔥</span><strong id="sPct">۰٪</strong><small>درصد پیشرفت</small></div>
+</div>
 </section>
 
 <section class="section" id="courses">
- <div class="container">
-  <div class="section-head"><div><span class="kicker">LEARNING LIBRARY</span><h2>کتابخانه مهارت‌ها</h2><p>دوره موردنظرت را پیدا کن و از اولین درس شروع کن.</p></div><span class="eyebrow">🎓 مسیر خودت را انتخاب کن</span></div>
-  <div class="toolbar">
-   <div class="searchbox"><span class="search-icon">🔎</span><input id="searchInput" placeholder="جست‌وجو: اکسل، طراحی، هوش مصنوعی..." autocomplete="off"></div>
-   <select id="levelSelect" aria-label="سطح دوره"><option value="all">همه سطح‌ها</option><option value="مقدماتی">مقدماتی</option><option value="متوسط">متوسط</option><option value="پیشرفته">پیشرفته</option></select>
+<div class="container">
+<div class="section-head"><div><span class="eyebrow">THE LEARNING LIBRARY</span><h2>کتابخانه جامع دوره‌ها</h2><p>هر دوره سه مرحله دارد؛ درس‌ها را به‌ترتیب بخوان و تمرین‌ها را انجام بده.</p></div><span class="pill">🔎 جست‌وجو و فیلتر هوشمند</span></div>
+<div class="layout">
+ <div>
+  <div class="toolbar"><div class="search"><span>🔍</span><input id="search" placeholder="نام نرم‌افزار، درس یا موضوع..." autocomplete="off"></div>
+   <select id="levelFilter"><option value="all">همه سطح‌ها</option><option value="مقدماتی">مقدماتی</option><option value="متوسط">متوسط</option><option value="پیشرفته">پیشرفته</option></select>
+   <select id="sortFilter"><option value="default">مرتب‌سازی عادی</option><option value="progress">بیشترین پیشرفت</option><option value="name">نام دوره</option></select>
   </div>
   <div class="filters" id="filters">
-   <button class="filter active" data-cat="all">همه دوره‌ها</button>
-   <button class="filter" data-cat="office">آفیس</button>
-   <button class="filter" data-cat="design">طراحی</button>
-   <button class="filter" data-cat="google">ابزارهای گوگل</button>
-   <button class="filter" data-cat="team">همکاری</button>
-   <button class="filter" data-cat="tech">فناوری و AI</button>
+   <button class="filter active" data-cat="all">همه</button><button class="filter" data-cat="office">آفیس</button><button class="filter" data-cat="design">طراحی</button><button class="filter" data-cat="google">گوگل</button><button class="filter" data-cat="team">همکاری</button><button class="filter" data-cat="tech">فناوری و AI</button><button class="filter" data-cat="fav">⭐ علاقه‌مندی‌ها</button>
   </div>
-  <div class="course-grid" id="courseGrid"></div>
+  <div class="courses" id="courseGrid"></div>
  </div>
+ <aside class="sidebar">
+  <div class="panel">
+   <h3>🎯 پیشرفت تو</h3><div style="font-size:35px;font-weight:900;color:var(--purple)" id="bigPct">۰٪</div>
+   <div class="progress"><span id="mainBar"></span></div><p id="progressMessage">اولین درس را شروع کن و مسیر خودت را بساز.</p>
+   <button class="btn primary" style="width:100%" onclick="continueLearning()">▶ ادامه یادگیری</button>
+  </div>
+  <div class="panel"><h3>🏅 دستاوردها</h3><div id="badges"></div></div>
+  <div class="panel"><h3>🕘 ادامه سریع</h3><div id="continueBox"><p>پس از شروع یک درس، اینجا نمایش داده می‌شود.</p></div></div>
+ </aside>
+</div>
+</div>
 </section>
 
 <section class="section">
- <div class="container">
-  <div class="banner">
-   <div><span class="kicker" style="color:#82eff2">YOUR NEXT LEVEL</span><h2>دانستن کافی نیست؛ بساز! 🚀</h2><p>با انجام پروژه‌های واقعی، چیزهایی را که یاد می‌گیری به مهارت قابل استفاده تبدیل کن. از یک گزارش ساده شروع کن و قدم‌به‌قدم جلو برو.</p><a href="#projects" class="btn" style="background:white;color:#332b88">رفتن به پروژه‌ها ←</a></div>
-   <div class="banner-art">💡</div>
-  </div>
- </div>
+<div class="container"><div class="banner"><div><span class="eyebrow" style="color:#8bf4f0">LEARN BY BUILDING</span><h2>فقط مطالعه نکن؛ پروژه بساز! 🚀</h2><p>مهارت واقعی زمانی شکل می‌گیرد که آموخته‌هایت را در یک کار عملی به کار ببری. برای هر مسیر یک پروژه مشخص کن و نتیجه را بررسی کن.</p><a class="btn" href="#projects" style="background:white;color:#332b88">مشاهده پروژه‌ها ←</a></div><div class="big-icon">💡</div></div></div>
 </section>
 
-<section class="section" id="learning">
- <div class="container">
-  <div class="section-head"><div><span class="kicker">YOUR ROADMAP</span><h2>مسیر پیشنهادی یادگیری</h2><p>اگر تازه شروع کرده‌ای، این ترتیب می‌تواند به تو کمک کند.</p></div></div>
-  <div class="two-col">
-   <div class="panel">
-    <h3>🗺️ از مبتدی تا ماهر</h3>
-    <div class="lesson-row"><div class="lesson-num">۱</div><div><strong>مهارت‌های پایه کامپیوتر</strong><small>مدیریت فایل، پوشه و امنیت دیجیتال</small></div><button class="btn btn-soft" onclick="openCourse('windows')">شروع</button></div>
-    <div class="lesson-row"><div class="lesson-num">۲</div><div><strong>ساخت اسناد و گزارش‌ها</strong><small>Word و اصول قالب‌بندی حرفه‌ای</small></div><button class="btn btn-soft" onclick="openCourse('word')">شروع</button></div>
-    <div class="lesson-row"><div class="lesson-num">۳</div><div><strong>ارائه و داستان‌گویی تصویری</strong><small>PowerPoint و طراحی اسلاید</small></div><button class="btn btn-soft" onclick="openCourse('powerpoint')">شروع</button></div>
-    <div class="lesson-row"><div class="lesson-num">۴</div><div><strong>جدول‌ها و تحلیل داده</strong><small>Excel، فرمول‌ها و نمودارها</small></div><button class="btn btn-soft" onclick="openCourse('excel')">شروع</button></div>
-    <div class="lesson-row"><div class="lesson-num">۵</div><div><strong>طراحی و هوش مصنوعی</strong><small>Canva و AI برای سریع‌تر کار کردن</small></div><button class="btn btn-soft" onclick="openCourse('ai')">شروع</button></div>
-   </div>
-   <div class="panel">
-    <h3>🏆 وضعیت یادگیری من</h3>
-    <p style="font-size:13px;color:var(--muted)">پیشرفت درس‌ها در همین مرورگر ذخیره می‌شود.</p>
-    <div style="font-size:42px;font-weight:900;color:var(--primary)" id="progressBig">۰٪</div>
-    <div class="progress-line"><span id="mainProgress"></span></div>
-    <p style="font-size:12px;color:var(--muted)" id="progressMessage">هنوز درسی را تکمیل نکرده‌ای؛ اولین درس را شروع کن!</p>
-    <button class="btn btn-primary" onclick="continueLearning()">▶ ادامه یادگیری</button>
-    <button class="btn btn-soft" onclick="resetProgress()">بازنشانی پیشرفت</button>
-    <div class="tip" style="margin-top:20px">💡 پیشنهاد: هر روز یک درس را بخوان و همان روز یک تمرین کوچک انجام بده. تمرین کردن به اندازه مطالعه اهمیت دارد.</div>
-   </div>
-  </div>
- </div>
+<section class="section" id="roadmap">
+<div class="container">
+<div class="section-head"><div><span class="eyebrow">YOUR ROADMAP</span><h2>نقشه راه یادگیری</h2><p>یک ترتیب پیشنهادی برای پیشرفت تدریجی و منظم.</p></div></div>
+<div class="roadmap">
+ <article class="road-card"><div class="n">۰۱</div><h3>پایه‌های دیجیتال</h3><p>مدیریت فایل‌ها، امنیت حساب‌ها، شناخت محیط نرم‌افزارها و نظم دیجیتال.</p><button class="btn soft" onclick="openCourse('windows')">شروع این مرحله ←</button></article>
+ <article class="road-card"><div class="n">۰۲</div><h3>تولید محتوا</h3><p>نوشتن گزارش با Word، طراحی اسلاید در PowerPoint و ساخت پوستر.</p><button class="btn soft" onclick="openCourse('word')">شروع این مرحله ←</button></article>
+ <article class="road-card"><div class="n">۰۳</div><h3>داده و تحلیل</h3><p>فرمول‌ها، نمودارها، ساختار داده و تحلیل نتایج در Excel.</p><button class="btn soft" onclick="openCourse('excel')">شروع این مرحله ←</button></article>
+ <article class="road-card"><div class="n">۰۴</div><h3>سازمان‌دهی و همکاری</h3><p>مدیریت ایمیل، یادداشت‌ها، جلسه‌ها و فایل‌های گروهی.</p><button class="btn soft" onclick="openCourse('teams')">شروع این مرحله ←</button></article>
+ <article class="road-card"><div class="n">۰۵</div><h3>سیستم‌ها و پایگاه داده</h3><p>درک جدول‌های مرتبط، پرس‌وجوها و طراحی اطلاعات ساختارمند.</p><button class="btn soft" onclick="openCourse('access')">شروع این مرحله ←</button></article>
+ <article class="road-card"><div class="n">۰۶</div><h3>طراحی و هوش مصنوعی</h3><p>ارتقای طراحی بصری، نوشتن درخواست‌های بهتر و بررسی صحت اطلاعات.</p><button class="btn soft" onclick="openCourse('ai')">شروع این مرحله ←</button></article>
+</div>
+</div>
 </section>
 
 <section class="section" id="projects">
- <div class="container">
-  <div class="section-head"><div><span class="kicker">BUILD SOMETHING</span><h2>کارگاه پروژه‌های عملی</h2><p>پروژه‌هایی که می‌توانی با آموخته‌هایت انجام بدهی.</p></div></div>
-  <div class="project-grid">
-   <article class="project"><div class="emoji">📄</div><h3>پروژه ۱: گزارش حرفه‌ای</h3><p>یک گزارش چندصفحه‌ای مرتب بساز؛ با صفحه عنوان، فهرست، تیترها و شماره صفحه.</p><ol><li>موضوعی انتخاب کن.</li><li>متن را با تیترهای مناسب تنظیم کن.</li><li>فهرست و شماره صفحه اضافه کن.</li><li>فایل را به PDF تبدیل کن.</li></ol><button class="btn btn-soft" onclick="openCourse('word')">یادگیری Word ←</button></article>
-   <article class="project"><div class="emoji">🎤</div><h3>پروژه ۲: ارائه جذاب</h3><p>یک ارائه آموزشی بساز که اطلاعات را کوتاه، واضح و دیداری منتقل کند.</p><ol><li>یک موضوع انتخاب کن.</li><li>برای هر اسلاید یک ایده داشته باش.</li><li>از تصویر و نمودار استفاده کن.</li><li>ارائه را تمرین کن.</li></ol><button class="btn btn-soft" onclick="openCourse('powerpoint')">یادگیری PowerPoint ←</button></article>
-   <article class="project"><div class="emoji">📊</div><h3>پروژه ۳: داشبورد نمره‌ها</h3><p>جدولی بساز که میانگین، بیشترین نمره و نمودار نتایج را نمایش دهد.</p><ol><li>داده‌های نمونه وارد کن.</li><li>از AVERAGE و MAX استفاده کن.</li><li>داده‌ها را مرتب کن.</li><li>یک نمودار خوانا بساز.</li></ol><button class="btn btn-soft" onclick="openCourse('excel')">یادگیری Excel ←</button></article>
-   <article class="project"><div class="emoji">🎨</div><h3>پروژه ۴: پوستر رویداد</h3><p>پوستری برای یک جشنواره، نمایشگاه یا برنامه مدرسه طراحی کن.</p><ol><li>عنوان واضح انتخاب کن.</li><li>دو یا سه رنگ هماهنگ استفاده کن.</li><li>اطلاعات ضروری را مشخص کن.</li><li>خروجی مناسب چاپ بگیر.</li></ol><button class="btn btn-soft" onclick="openCourse('canva')">یادگیری Canva ←</button></article>
-   <article class="project"><div class="emoji">🗂️</div><h3>پروژه ۵: دفتر برنامه‌ریزی</h3><p>کارهای هفتگی، مهلت‌ها و یادداشت‌ها را در یک سیستم ساده سازمان‌دهی کن.</p><ol><li>کارها را فهرست کن.</li><li>برای هر کار زمان تعیین کن.</li><li>یادآور و دسته‌بندی بساز.</li><li>هر هفته برنامه را بررسی کن.</li></ol><button class="btn btn-soft" onclick="openCourse('onenote')">یادگیری OneNote ←</button></article>
-   <article class="project"><div class="emoji">🤖</div><h3>پروژه ۶: دستیار مطالعه AI</h3><p>با کمک هوش مصنوعی برای یک موضوع، خلاصه، پرسش تمرینی و برنامه مطالعه تهیه کن.</p><ol><li>هدف و موضوع را مشخص کن.</li><li>درخواست دقیق بنویس.</li><li>پاسخ‌ها را بررسی کن.</li><li>اطلاعات را با منبع معتبر تطبیق بده.</li></ol><button class="btn btn-soft" onclick="openCourse('ai')">یادگیری AI ←</button></article>
-  </div>
- </div>
+<div class="container">
+<div class="section-head"><div><span class="eyebrow">PRACTICAL WORKSHOP</span><h2>پروژه‌های عملی</h2><p>برای هر پروژه یک خروجی قابل بررسی بساز.</p></div></div>
+<div class="projects">
+ <article class="project"><div class="emoji">📄</div><h3>گزارش حرفه‌ای</h3><p>گزارشی با ساختار مشخص، فهرست مطالب، جدول و خروجی PDF تهیه کن.</p><ol><li>موضوع و ساختار را تعیین کن.</li><li>از Headingها استفاده کن.</li><li>فهرست و شماره صفحه بساز.</li><li>نسخه PDF را بازبینی کن.</li></ol><button class="btn soft" onclick="openCourse('word')">دوره Word ←</button></article>
+ <article class="project"><div class="emoji">📊</div><h3>داشبورد داده</h3><p>با داده‌های فرضی یک داشبورد شامل شاخص‌ها و نمودار بساز.</p><ol><li>داده‌ها را پاک‌سازی کن.</li><li>فرمول‌های مناسب را بنویس.</li><li>جدول و نمودار بساز.</li><li>نتیجه‌ها را توضیح بده.</li></ol><button class="btn soft" onclick="openCourse('excel')">دوره Excel ←</button></article>
+ <article class="project"><div class="emoji">🎨</div><h3>ارائه چندرسانه‌ای</h3><p>یک موضوع را با اسلایدهای منظم و عناصر بصری مناسب توضیح بده.</p><ol><li>مخاطب را مشخص کن.</li><li>برای هر اسلاید یک ایده بنویس.</li><li>از تصویر و نمودار مرتبط استفاده کن.</li><li>زمان ارائه را تمرین کن.</li></ol><button class="btn soft" onclick="openCourse('powerpoint')">دوره PowerPoint ←</button></article>
+ <article class="project"><div class="emoji">🗃️</div><h3>پایگاه داده کوچک</h3><p>طرح یک پایگاه داده برای کتابخانه یا مجموعه‌ای از محصولات تهیه کن.</p><ol><li>موجودیت‌ها را مشخص کن.</li><li>فیلدها و کلیدها را تعریف کن.</li><li>رابطه‌ها را رسم کن.</li><li>چند پرس‌وجو طراحی کن.</li></ol><button class="btn soft" onclick="openCourse('access')">دوره Access ←</button></article>
+ <article class="project"><div class="emoji">🖼️</div><h3>هویت بصری پروژه</h3><p>برای یک رویداد پوستر، پالت رنگ و چند قالب هماهنگ طراحی کن.</p><ol><li>مخاطب و پیام را تعیین کن.</li><li>رنگ و فونت انتخاب کن.</li><li>پوستر را طراحی کن.</li><li>خوانایی و حقوق تصاویر را بررسی کن.</li></ol><button class="btn soft" onclick="openCourse('canva')">دوره Canva ←</button></article>
+ <article class="project"><div class="emoji">🤖</div><h3>دستیار مطالعه</h3><p>با یک ابزار AI پیش‌نویس برنامه مطالعه و پرسش تمرینی بساز و خروجی را بررسی کن.</p><ol><li>هدف دقیق تعیین کن.</li><li>درخواست روشن بنویس.</li><li>پاسخ را راستی‌آزمایی کن.</li><li>اطلاعات شخصی وارد نکن.</li></ol><button class="btn soft" onclick="openCourse('ai')">دوره AI ←</button></article>
+</div>
+</div>
 </section>
 
 <section class="section" id="faq">
- <div class="container">
-  <div class="section-head"><div><span class="kicker">HELP CENTER</span><h2>سؤالات پرتکرار</h2><p>پاسخ چند سؤال برای شروع بهتر.</p></div></div>
-  <details class="faq"><summary>آیا دوره‌ها رایگان هستند؟</summary><p>محتوای آموزشی همین سایت رایگان است. بعضی نرم‌افزارها یا قابلیت‌های پیشرفته سرویس‌های معرفی‌شده ممکن است به اشتراک یا حساب کاربری نیاز داشته باشند.</p></details>
-  <details class="faq"><summary>آیا باید همه نرم‌افزارها را نصب کنم؟</summary><p>خیر. برای شروع می‌توانی از نسخه‌های وب برخی ابزارها استفاده کنی. دسترسی و امکانات به سرویس و حساب کاربری تو بستگی دارد.</p></details>
-  <details class="faq"><summary>پیشرفت من کجا ذخیره می‌شود؟</summary><p>در این نسخه، وضعیت درس‌های تکمیل‌شده در حافظه محلی مرورگر ذخیره می‌شود؛ بنابراین روی دستگاه و مرورگر دیگری خودکار منتقل نمی‌شود. پاک کردن داده‌های سایت ممکن است پیشرفت را حذف کند.</p></details>
-  <details class="faq"><summary>آیا این سایت خودش هوش مصنوعی دارد؟</summary><p>این نسخه دوره آموزشی هوش مصنوعی دارد، اما چت‌بات متصل به مدل هوش مصنوعی در آن فعال نیست. برای اتصال واقعی به مدل باید یک سرویس سمت سرور و نگهداری امن کلید API راه‌اندازی شود.</p></details>
-  <details class="faq"><summary>چطور درس‌ها را بهتر یاد بگیرم؟</summary><p>هر درس را بخوان، نرم‌افزار مربوط را باز کن، مراحل را خودت انجام بده و در پایان یک پروژه کوچک بساز. صرفاً خواندن مراحل به‌اندازه تمرین عملی مؤثر نیست.</p></details>
- </div>
+<div class="container"><div class="section-head"><div><span class="eyebrow">HELP CENTER</span><h2>راهنما و سؤالات</h2></div></div>
+<details class="faq"><summary>آیا این دوره‌ها تا سطح پیشرفته هستند؟</summary><p>هر مسیر سه سطح دارد و موضوعات مقدماتی، متوسط و پیشرفته را معرفی می‌کند. عمق واقعی تسلط به تمرین عملی، نسخه نرم‌افزار و تکمیل پروژه‌ها بستگی دارد؛ این سایت جایگزین مستندات رسمی یا تمرین طولانی‌مدت نیست.</p></details>
+<details class="faq"><summary>آیا تمام قابلیت‌های نرم‌افزارها در همه نسخه‌ها یکسان است؟</summary><p>خیر. نام منوها و دسترسی به قابلیت‌هایی مثل Power Query، ماکروها یا بعضی امکانات ابری ممکن است بر اساس نسخه، سیستم‌عامل، نوع حساب و مجوز متفاوت باشد.</p></details>
+<details class="faq"><summary>پیشرفت من کجا ذخیره می‌شود؟</summary><p>در مرورگر همین دستگاه ذخیره می‌شود. برای همگام‌سازی بین دستگاه‌ها باید سیستم حساب کاربری و پایگاه داده راه‌اندازی شود.</p></details>
+<details class="faq"><summary>آیا آزمون‌ها مدرک رسمی می‌دهند؟</summary><p>خیر. آزمون‌ها برای تمرین و مرور هستند و گواهی‌نامه رسمی محسوب نمی‌شوند.</p></details>
+<details class="faq"><summary>آیا چت‌بات واقعی در این نسخه وجود دارد؟</summary><p>این نسخه بخش آموزشی AI دارد، اما به مدل هوش مصنوعی متصل نیست. برای اتصال واقعی به مدل باید بک‌اند امن ایجاد شود و کلید API در کد عمومی سایت قرار نگیرد.</p></details>
+</div>
 </section>
 </main>
 
-<footer>
- <div class="container">
-  <div class="footer-grid">
-   <div><a href="#" class="brand"><span class="logo">✦</span><span>OFFICE ACADEMY X<small style="color:#aab4d4">آکادمی مهارت‌های دیجیتال</small></span></a><p>یک فضای آموزشی برای آشنایی با نرم‌افزارهای اداری، طراحی، همکاری آنلاین و ابزارهای هوشمند.</p></div>
-   <div><h4>دسترسی سریع</h4><a href="#courses">همه دوره‌ها</a><a href="#learning">مسیر یادگیری</a><a href="#projects">پروژه‌ها</a></div>
-   <div><h4>یادگیری بیشتر</h4><a href="https://support.microsoft.com/" target="_blank" rel="noopener noreferrer">راهنمای Microsoft</a><a href="https://support.google.com/" target="_blank" rel="noopener noreferrer">راهنمای Google</a><a href="https://www.canva.com/learn/" target="_blank" rel="noopener noreferrer">آموزش Canva</a></div>
-  </div>
-  <div class="footer-bottom">© OFFICE ACADEMY X — محتوای آموزشی برای یادگیری و تمرین. این سایت وابسته رسمی به Microsoft، Google یا Canva نیست.</div>
- </div>
-</footer>
+<footer><div class="container">
+<div class="footer-grid">
+ <div><a class="brand" href="#"><span class="logo">✦</span><span>OFFICE ACADEMY X<small style="color:#a6b0d0">PRO LEARNING PLATFORM</small></span></a><p>آکادمی آموزشی برای تمرین نرم‌افزارهای اداری، طراحی و ابزارهای دیجیتال.</p></div>
+ <div><b>دسترسی سریع</b><a href="#courses">دوره‌ها</a><a href="#roadmap">مسیر یادگیری</a><a href="#projects">پروژه‌ها</a></div>
+ <div><b>منابع رسمی</b><a href="https://support.microsoft.com/" target="_blank" rel="noopener noreferrer">Microsoft Support</a><a href="https://support.google.com/" target="_blank" rel="noopener noreferrer">Google Help</a><a href="https://www.canva.com/learn/" target="_blank" rel="noopener noreferrer">Canva Learn</a></div>
+</div><div class="footer-bottom">OFFICE ACADEMY X PRO · محتوای آموزشی مستقل؛ وابسته رسمی به شرکت‌های معرفی‌شده نیست.</div>
+</div></footer>
 
-<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
- <div class="modal">
-  <div class="modal-head"><div><span class="kicker" id="modalKicker">ACADEMY LESSON</span><h2 id="modalTitle">عنوان درس</h2></div><button class="iconbtn" onclick="closeModal()" aria-label="بستن">✕</button></div>
-  <div id="lessonNav" class="lesson-nav"></div>
-  <div class="modal-content" id="modalContent"></div>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
-   <button class="btn btn-primary" id="completeBtn" onclick="completeCurrentLesson()">✓ تکمیل این درس</button>
-   <button class="btn btn-soft" onclick="nextLesson()">درس بعدی ←</button>
-  </div>
- </div>
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal">
+ <div class="modal-head"><div><small id="modalSub">ACADEMY PRO</small><h2 id="modalTitle">درس</h2></div><button class="iconbtn" onclick="closeModal()" aria-label="بستن">✕</button></div>
+ <div id="lessonTabs" class="lesson-tabs"></div>
+ <div id="lessonBody" class="lesson-body"></div>
+ <div class="lesson-actions"><button id="completeBtn" class="btn primary" onclick="completeLesson()">✓ تکمیل درس</button><button class="btn soft" onclick="previousLesson()">→ درس قبل</button><button class="btn soft" onclick="nextLesson()">درس بعد ←</button></div>
 </div>
-<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="بازگشت به بالا">↑</button>
-<div class="toast" id="toast"></div>
+</div>
+<button id="backTop" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div id="toast" class="toast"></div>
 
 <script>
-const courses=[
-{id:'word',name:'Microsoft Word',short:'ورد',cat:'office',icon:'📘',color:'#2864d7',level:'مقدماتی',time:'۳ ساعت',desc:'ساخت اسناد مرتب، گزارش‌های مدرسه، نامه‌ها و فایل‌های حرفه‌ای.',lessons:[
-['آشنایی با محیط Word','Word ابزار پردازش متن است. از آن برای نوشتن نامه، گزارش، تحقیق و رزومه استفاده می‌شود.','برنامه را باز کن و یک سند خالی بساز. از بخش Home اندازه و نوع قلم را تغییر بده. سپس یک عنوان و دو پاراگراف بنویس.','سند خود را با نام تمرین اول ذخیره کن.'],
-['قالب‌بندی متن و پاراگراف','قالب‌بندی درست خوانایی متن را بیشتر می‌کند. اندازه قلم، فاصله خطوط، تراز و فاصله پاراگراف‌ها از ابزارهای مهم هستند.','عنوان را بزرگ‌تر و پررنگ کن. متن فارسی را راست‌چین کن و فاصله خطوط را برای خوانایی تنظیم کن.','یک صفحه متن با عنوان و دو زیرعنوان مرتب بساز.'],
-['سبک‌ها و فهرست خودکار','استفاده از Headingها باعث می‌شود ساختار سند منظم شود و بتوانی فهرست مطالب خودکار بسازی.','برای عنوان اصلی از Heading 1 و برای بخش‌های فرعی از Heading 2 استفاده کن. سپس از بخش References فهرست مطالب را وارد کن.','یک گزارش با سه عنوان اصلی و فهرست خودکار بساز.'],
-['جدول، تصویر و صفحه‌آرایی','جدول‌ها اطلاعات را منظم می‌کنند و تصاویر می‌توانند به درک بهتر متن کمک کنند.','از Insert یک جدول سه‌ستونه درج کن. سپس یک تصویر اضافه کن و گزینه‌های چیدمان آن را بررسی کن.','یک جدول برنامه هفتگی با تصویر و عنوان بساز.'],
-['سرصفحه، پاصفحه و شماره صفحه','سرصفحه و پاصفحه برای درج اطلاعات تکرارشونده مانند عنوان سند و شماره صفحه کاربرد دارند.','از Insert بخش Page Number را باز کن و یک قالب مناسب انتخاب کن. در صورت نیاز عنوان را در Header قرار بده.','یک گزارش دوصفحه‌ای با شماره صفحه تهیه کن.'],
-['بازبینی و همکاری','ابزارهای بازبینی به اصلاح متن و مدیریت پیشنهادهای ویرایشی کمک می‌کنند.','از Review برای بررسی املا، درج نظر و در صورت نیاز Track Changes استفاده کن.','یک متن کوتاه را بازبینی کن و دو اصلاح انجام بده.'],
-['قالب‌بندی پیشرفته','بخش‌بندی صفحه، حاشیه‌ها و شکست صفحه برای کنترل چیدمان اسناد طولانی مفید هستند.','از Layout حاشیه صفحه را تنظیم کن و با Page Break یک بخش جدید در صفحه بعد بساز.','یک گزارش رسمی با صفحه عنوان و بخش‌های جداگانه بساز.'],
-['خروجی گرفتن و آماده‌سازی نهایی','PDF معمولاً برای اشتراک‌گذاری نسخه‌ای با چیدمان ثابت مناسب است. پیش از ارسال، سند را بازبینی کن.','سند را از مسیر File و سپس Export یا Save As به PDF تبدیل کن. نتیجه را باز کن و صفحه‌ها را بررسی کن.','گزارش نهایی خود را هم در قالب DOCX و هم PDF ذخیره کن.']
-]},
-{id:'powerpoint',name:'Microsoft PowerPoint',short:'پاورپوینت',cat:'office',icon:'🎨',color:'#d85d2c',level:'مقدماتی',time:'۳ ساعت',desc:'ساخت ارائه‌های جذاب، اسلایدهای حرفه‌ای و داستان‌گویی تصویری.',lessons:[
-['اصول ارائه خوب','ارائه مؤثر باید پیام روشنی داشته باشد. هر اسلاید بهتر است یک ایده اصلی را منتقل کند.','یک ارائه خالی بساز و برای آن عنوان، مقدمه و سه بخش محتوایی در نظر بگیر.','موضوعی انتخاب کن و طرح کلی پنج اسلاید را بنویس.'],
-['قالب و چیدمان اسلاید','قالب یکپارچه باعث می‌شود همه اسلایدها هماهنگ دیده شوند. از Slide Master برای کنترل سبک کلی استفاده کن.','از تب Design یک Theme انتخاب کن و چند نوع Layout را امتحان کن.','برای ارائه خود دو رنگ اصلی و دو اندازه تیتر مشخص کن.'],
-['تصویر، آیکون و نمودار','تصویر مرتبط و نمودار خوانا به مخاطب کمک می‌کند اطلاعات را سریع‌تر درک کند.','از Insert تصویر یا آیکون اضافه کن. اگر داده عددی داری، نمودار مناسب را انتخاب کن.','یک اسلاید بساز که یک داده را با نمودار توضیح بدهد.'],
-['انیمیشن و انتقال','Transition بین اسلایدها اتفاق می‌افتد؛ Animation روی عناصر همان اسلاید اعمال می‌شود. استفاده زیاد می‌تواند حواس‌پرت‌کن باشد.','برای یک عنوان انیمیشن ساده انتخاب کن و یک Transition ملایم را امتحان کن.','یک اسلاید با دو انیمیشن هدفمند طراحی کن.'],
-['یادداشت سخنران','یادداشت‌ها به ارائه‌دهنده کمک می‌کنند نکات مهم را فراموش نکند، بدون آنکه اسلاید را پر از متن کند.','برای هر اسلاید یک یا دو نکته در بخش Notes بنویس.','یک ارائه کوتاه همراه با یادداشت سخنران آماده کن.'],
-['ارائه و زمان‌بندی','حالت Slide Show به تو اجازه می‌دهد ارائه را مانند مخاطب ببینی و زمان‌بندی را تمرین کنی.','از ابتدای ارائه Slide Show را اجرا کن و خوانایی متن را از فاصله بررسی کن.','ارائه سه‌دقیقه‌ای خود را با زمان‌سنج تمرین کن.'],
-['قواعد طراحی اسلاید','تضاد رنگ، فضای خالی و سلسله‌مراتب بصری باعث می‌شوند مخاطب بداند ابتدا به کجا نگاه کند.','یک اسلاید شلوغ را ساده کن: متن اضافی را حذف کن و تیتر و تصویر را برجسته کن.','یک اسلاید قبل و بعد از بازطراحی آماده کن.'],
-['خروجی و اشتراک‌گذاری','بسته به نیاز مخاطب می‌توان فایل قابل ویرایش یا نسخه PDF را به اشتراک گذاشت.','فایل را ذخیره کن و از مسیر Export نسخه PDF بگیر. فونت‌ها و تصاویر را بررسی کن.','ارائه نهایی پنج تا هفت اسلایدی بساز.']
-]},
-{id:'excel',name:'Microsoft Excel',short:'اکسل',cat:'office',icon:'📊',color:'#16865b',level:'مقدماتی',time:'۴ ساعت',desc:'فرمول‌نویسی، جدول‌ها، مرتب‌سازی، نمودارها و تحلیل داده.',lessons:[
-['سلول، ردیف و ستون','Excel داده‌ها را در سلول‌هایی قرار می‌دهد که با نام ستون و شماره ردیف شناخته می‌شوند.','یک جدول با ستون‌های نام، درس و نمره بساز. عرض ستون‌ها را تنظیم کن.','جدول پنج ردیفی با سرستون واضح بساز.'],
-['فرمول‌های پایه','فرمول‌ها معمولاً با علامت مساوی شروع می‌شوند. SUM برای جمع، AVERAGE برای میانگین، MAX برای بیشترین و MIN برای کمترین مقدار هستند.','اگر نمره‌ها در C2 تا C6 هستند، در یک سلول خالی بنویس =AVERAGE(C2:C6).','میانگین و بیشترین مقدار یک مجموعه داده را محاسبه کن.'],
-['ارجاع نسبی و مطلق','ارجاع نسبی هنگام کپی فرمول تغییر می‌کند. با علامت دلار، مثل $B$2، می‌توان ارجاع را ثابت نگه داشت.','یک فرمول ساده بساز و آن را به سلول‌های دیگر بکش. سپس رفتار ارجاع‌ها را مقایسه کن.','جدولی بساز که قیمت و درصد تخفیف را محاسبه کند.'],
-['مرتب‌سازی و فیلتر','Sort ترتیب داده‌ها را تغییر می‌دهد و Filter نمایش ردیف‌های مطابق معیار را محدود می‌کند.','جدول را به Table تبدیل کن و مرتب‌سازی بر اساس نمره را امتحان کن.','فقط ردیف‌های دارای مقدار بالاتر از یک معیار را نمایش بده.'],
-['قالب‌بندی شرطی','قالب‌بندی شرطی بر اساس قانون، ظاهر سلول‌ها را تغییر می‌دهد و الگوهای مهم را برجسته می‌کند.','برای نمره‌ها قانون رنگی تعریف کن و نتیجه را با چند مقدار آزمایش کن.','جدولی بساز که مقادیر مهم را خودکار برجسته کند.'],
-['نمودارها','نمودار ستونی برای مقایسه دسته‌ها و نمودار خطی برای تغییرات در طول زمان مفید است.','داده‌ها را انتخاب کن و از Insert نمودار مناسب درج کن. عنوان و برچسب‌ها را اصلاح کن.','یک نمودار برای مقایسه داده‌های پنج دسته بساز.'],
-['توابع شرطی و شمارش','IF برای نتیجه‌گیری شرطی، COUNT برای شمارش سلول‌های عددی و COUNTIF برای شمارش بر اساس معیار کاربرد دارند.','نمونه: =IF(B2>=10,"قبول","نیاز به تلاش")؛ جداکننده آرگومان ممکن است در تنظیمات دستگاه متفاوت باشد.','یک جدول نمونه با وضعیت قبول یا نیاز به تلاش بساز.'],
-['داشبورد مقدماتی','داشبورد خلاصه‌ای از داده‌ها را در یک نگاه نشان می‌دهد. سادگی و انتخاب شاخص‌های مناسب مهم است.','چند شاخص مانند میانگین و تعداد موارد را در بالای برگه قرار بده و نمودارها را زیر آن بچین.','یک داشبورد ساده با داده‌های فرضی طراحی کن.']
-]},
-{id:'outlook',name:'Microsoft Outlook',short:'اوت‌لوک',cat:'office',icon:'✉️',color:'#2376cb',level:'مقدماتی',time:'۲ ساعت',desc:'مدیریت ایمیل، تقویم، جلسه‌ها و ارتباطات حرفه‌ای.',lessons:[
-['آشنایی با ایمیل حرفه‌ای','یک ایمیل خوب موضوع مشخص، سلام مناسب، متن روشن و پایان محترمانه دارد.','یک ایمیل تمرینی بنویس که در آن موضوع، درخواست و زمان موردنیاز روشن باشد.','یک ایمیل رسمی برای درخواست اطلاعات آماده کن.'],
-['مدیریت صندوق ورودی','پوشه‌ها، پرچم‌ها و جست‌وجو به مرتب ماندن ایمیل‌ها کمک می‌کنند.','چند پوشه برای کارها ایجاد کن و ایمیل‌های نمونه را دسته‌بندی کن.','یک روش شخصی برای مدیریت ایمیل طراحی کن.'],
-['تقویم و جلسه‌ها','تقویم برای ثبت رویداد، زمان‌بندی جلسه و ارسال دعوت‌نامه استفاده می‌شود.','یک رویداد تمرینی با عنوان، زمان و یادآور بساز.','برنامه هفتگی خود را وارد تقویم کن.']
-]},
-{id:'onenote',name:'Microsoft OneNote',short:'وان‌نوت',cat:'office',icon:'📒',color:'#7953bf',level:'مقدماتی',time:'۲ ساعت',desc:'دفتر یادداشت دیجیتال برای درس‌ها، ایده‌ها و برنامه‌ریزی.',lessons:[
-['ساخت دفتر یادداشت','دفترها می‌توانند شامل بخش‌ها و صفحه‌های متعدد باشند؛ ساختار خوب پیدا کردن یادداشت‌ها را آسان می‌کند.','یک دفتر برای مدرسه، بخش‌هایی برای درس‌ها و صفحه‌ای برای هر موضوع بساز.','یادداشت‌های یک درس را مرتب کن.'],
-['یادداشت‌برداری مؤثر','به‌جای رونویسی کامل، نکات اصلی، پرسش‌ها و مثال‌ها را ثبت کن.','یادداشت خود را با تیتر، فهرست و نشانه‌گذاری سازمان‌دهی کن.','یک صفحه خلاصه برای مرور امتحان تهیه کن.'],
-['جست‌وجو و سازمان‌دهی','جست‌وجو و برچسب‌ها کمک می‌کنند نکته‌های مهم را در میان یادداشت‌ها پیدا کنی.','چند برچسب برای کارهای مهم یا پرسش‌ها امتحان کن.','یک سیستم مرور هفتگی طراحی کن.']
-]},
-{id:'access',name:'Microsoft Access',short:'اکسس',cat:'office',icon:'🗃️',color:'#c74b66',level:'متوسط',time:'۳ ساعت',desc:'مبانی پایگاه داده، جدول‌ها، ارتباط‌ها، پرس‌وجو و فرم‌ها.',lessons:[
-['مفهوم پایگاه داده','پایگاه داده اطلاعات مرتبط را به شکلی ساختارمند ذخیره می‌کند. پیش از ساخت، موجودیت‌ها و اطلاعات موردنیاز را مشخص کن.','برای یک کتابخانه، موجودیت‌های کتاب، عضو و امانت را شناسایی کن.','فهرست فیلدهای موردنیاز کتابخانه را طراحی کن.'],
-['جدول و کلید اصلی','جدول اطلاعات یک نوع موجودیت را نگهداری می‌کند. کلید اصلی هر رکورد را به‌صورت یکتا مشخص می‌کند.','برای جدول کتاب‌ها فیلد شناسه، عنوان و نویسنده تعریف کن.','یک طرح جدول با کلید اصلی تهیه کن.'],
-['ارتباط و پرس‌وجو','ارتباط‌ها پیوند منطقی جدول‌ها را مشخص می‌کنند و Query برای بازیابی اطلاعات با معیارهای انتخابی کاربرد دارد.','طرح رابطه میان عضو و امانت را رسم کن و مشخص کن چه اطلاعاتی باید بازیابی شوند.','یک پرس‌وجوی نمونه برای کتاب‌های امانت‌گرفته‌شده طراحی کن.']
-]},
-{id:'canva',name:'Canva Design',short:'کانوا',cat:'design',icon:'🖌️',color:'#6557f5',level:'مقدماتی',time:'۳ ساعت',desc:'طراحی پوستر، ارائه، محتوای شبکه اجتماعی و اینفوگرافیک.',lessons:[
-['شناخت اصول طراحی','تضاد، تراز، تکرار و نزدیکی چهار اصل پایه برای طراحی منظم هستند.','یک قالب پوستر انتخاب کن و سلسله‌مراتب عنوان، متن و تصویر را بررسی کن.','پوستری با یک عنوان اصلی و اطلاعات محدود بساز.'],
-['رنگ و تایپوگرافی','ترکیب رنگ محدود و فونت خوانا به هماهنگی طراحی کمک می‌کند.','دو رنگ اصلی و یک رنگ تأکیدی انتخاب کن. اندازه عنوان را از متن بدنه متمایز کن.','یک پالت رنگ و سبک نوشتاری برای پروژه‌ات تعریف کن.'],
-['طراحی پوستر و ارائه','ابعاد طرح باید با محل انتشار آن هماهنگ باشد؛ طرح چاپی و دیجیتال ممکن است تنظیمات متفاوتی بخواهند.','ابعاد طرح را انتخاب کن، متن را بررسی کن و عناصر را هم‌تراز نگه دار.','یک پوستر رویداد با تاریخ، مکان و عنوان بساز.'],
-['تصاویر و عناصر بصری','از تصاویر مرتبط و دارای مجوز مناسب استفاده کن. تصاویر تزئینی زیاد ممکن است پیام اصلی را کم‌رنگ کنند.','تصویر، آیکون و فضای خالی را طوری تنظیم کن که عنوان همچنان واضح باشد.','یک طرح را با حذف عناصر اضافی ساده‌تر کن.']
-]},
-{id:'google',name:'Google Workspace',short:'ابزارهای گوگل',cat:'google',icon:'🌐',color:'#4285f4',level:'مقدماتی',time:'۳ ساعت',desc:'آشنایی با Docs، Sheets، Slides، Drive و همکاری آنلاین.',lessons:[
-['Google Drive','Drive برای نگهداری و سازمان‌دهی فایل‌ها و اشتراک‌گذاری آن‌ها استفاده می‌شود. سطح دسترسی را با دقت انتخاب کن.','یک پوشه بساز، یک فایل نمونه داخل آن قرار بده و گزینه‌های اشتراک‌گذاری را بررسی کن.','پوشه‌ای برای پروژه‌های مدرسه طراحی کن.'],
-['Google Docs','Docs برای نوشتن و ویرایش سند به‌صورت آنلاین و همکاری با دیگران کاربرد دارد.','سندی بساز، تیترها را قالب‌بندی کن و از نظرها برای بازخورد استفاده کن.','یک گزارش کوتاه مشترک آماده کن.'],
-['Google Sheets و Slides','Sheets برای جدول و تحلیل داده و Slides برای ساخت ارائه استفاده می‌شود.','یک جدول ساده در Sheets و یک ارائه کوتاه در Slides ایجاد کن.','نتایج یک نظرسنجی فرضی را در جدول و اسلاید نمایش بده.']
-]},
-{id:'teams',name:'Microsoft Teams',short:'تیمز',cat:'team',icon:'👥',color:'#6264a7',level:'مقدماتی',time:'۲ ساعت',desc:'جلسه آنلاین، گفت‌وگو، اشتراک فایل و همکاری گروهی.',lessons:[
-['کانال و گفت‌وگو','کانال‌ها گفتگوها را بر اساس پروژه یا موضوع سازمان‌دهی می‌کنند.','برای یک پروژه فرضی، کانال‌های برنامه‌ریزی، منابع و نتیجه نهایی تعریف کن.','ساختار گروهی مناسب یک پروژه تیمی طراحی کن.'],
-['جلسه آنلاین','جلسه خوب هدف، زمان‌بندی و دستور جلسه روشن دارد.','یک دستور جلسه کوتاه بنویس و نقش هر عضو را مشخص کن.','برای یک جلسه پنج‌دقیقه‌ای برنامه تهیه کن.'],
-['همکاری روی فایل‌ها','دسترسی مناسب و نام‌گذاری روشن فایل‌ها به همکاری بهتر کمک می‌کند.','یک ساختار پوشه و نام‌گذاری برای نسخه‌های فایل تعریف کن.','قواعد همکاری گروهی را در یک صفحه بنویس.']
-]},
-{id:'windows',name:'مهارت‌های کامپیوتر',short:'مهارت‌های دیجیتال',cat:'tech',icon:'💻',color:'#0e9ea9',level:'مقدماتی',time:'۳ ساعت',desc:'مدیریت فایل، میانبرهای کاربردی، امنیت و نظم دیجیتال.',lessons:[
-['فایل و پوشه','نام‌گذاری منظم و دسته‌بندی مناسب باعث می‌شود فایل‌ها را سریع‌تر پیدا کنی.','پوشه‌هایی برای مدرسه، پروژه‌ها و تصاویر بساز. نام فایل‌ها را با موضوع و تاریخ مشخص کن.','یک ساختار پوشه برای تمام درس‌هایت ایجاد کن.'],
-['میانبرهای کاربردی','میانبرها انجام کارهای تکراری را سریع‌تر می‌کنند. Ctrl+C کپی، Ctrl+V چسباندن و Ctrl+Z بازگشت به تغییر قبلی است.','چند متن نمونه را با میانبرهای کپی، چسباندن، ذخیره و بازگشت تمرین کن.','فهرستی از پنج میانبر پرکاربرد تهیه کن.'],
-['امنیت دیجیتال','رمزهای عبور یکتا، احراز هویت چندمرحله‌ای و توجه به پیوندهای مشکوک از اصول امنیت هستند.','پیش از باز کردن لینک، دامنه و فرستنده را بررسی کن. رمز یا کد ورود را برای دیگران نفرست.','یک چک‌لیست امنیتی برای حساب‌هایت تهیه کن.'],
-['پشتیبان‌گیری و نظم','پشتیبان‌گیری منظم احتمال از دست رفتن فایل‌ها را کاهش می‌دهد.','برای فایل‌های مهم نسخه پشتیبان در محلی امن در نظر بگیر و گاهی بازیابی را آزمایش کن.','برنامه ساده پشتیبان‌گیری هفتگی بساز.']
-]},
-{id:'ai',name:'AI & Smart Learning',short:'هوش مصنوعی',cat:'tech',icon:'🤖',color:'#8b5cf6',level:'متوسط',time:'۳ ساعت',desc:'نوشتن درخواست‌های بهتر، ایده‌پردازی، خلاصه‌سازی و بررسی خروجی AI.',lessons:[
-['هوش مصنوعی چه می‌کند؟','ابزارهای هوش مصنوعی می‌توانند در تولید پیش‌نویس، توضیح مفاهیم و ایده‌پردازی کمک کنند، اما ممکن است پاسخ نادرست بسازند.','یک موضوع درسی را انتخاب کن و از ابزار هوش مصنوعی بخواه آن را در سه سطح ساده، متوسط و پیشرفته توضیح دهد.','پاسخ را با کتاب یا منبع معتبر مقایسه کن.'],
-['نوشتن درخواست دقیق','درخواست خوب هدف، زمینه، قالب خروجی و محدودیت‌ها را روشن می‌کند.','به‌جای «درباره علوم بگو»، درخواست بده «مفهوم را برای دانش‌آموز مبتدی با سه مثال و پنج پرسش تمرینی توضیح بده».','برای یک تکلیف، درخواست روشن و قابل ارزیابی بنویس.'],
-['یادگیری با پرسش','می‌توان از AI برای ساخت سؤال تمرینی و توضیح مرحله‌ای استفاده کرد؛ پاسخ نهایی باید بررسی شود.','بخواه پنج سؤال از یک مبحث بسازد و پاسخ‌ها را پس از تلاش خودت بررسی کن.','یک مجموعه سؤال و پاسخ تشریحی بساز و صحت آن را بررسی کن.'],
-['راستی‌آزمایی و حریم خصوصی','خروجی AI همیشه دقیق نیست. اطلاعات شخصی، رمزها و داده‌های محرمانه را در ابزارها وارد نکن.','برای یک ادعای مهم، منبع مستقل پیدا کن و تاریخ و اعتبار آن را بررسی کن.','یک چک‌لیست برای استفاده مسئولانه از AI تهیه کن.']
-]}
+const definitions=[
+{id:'word',name:'Microsoft Word',icon:'📘',color:'#2864d7',cat:'office',desc:'ساخت سند، گزارش، پایان‌نامه و قالب‌های حرفه‌ای.',levels:[
+['آشنایی با محیط و ذخیره‌سازی','قلم و پاراگراف','صفحه‌آرایی و حاشیه‌ها'],
+['سبک‌ها و فهرست خودکار','جدول‌ها، تصاویر و کپشن','سرصفحه، پاصفحه و بخش‌بندی'],
+['ارجاع‌ها و منابع','Mail Merge و قالب‌ها','بازبینی پیشرفته و سند نهایی']]},
+{id:'powerpoint',name:'Microsoft PowerPoint',icon:'🎨',color:'#d85d2c',cat:'office',desc:'از اسلایدهای ابتدایی تا ارائه‌های پیشرفته و تعاملی.',levels:[
+['محیط، اسلاید و چیدمان','قالب و هماهنگی بصری','تصویر، آیکون و نمودار'],
+['Slide Master و قالب سفارشی','انیمیشن و زمان‌بندی','داده‌نمایی و روایت'],
+['پیوندها و ارائه تعاملی','بهینه‌سازی اجرا و رسانه','ارائه نهایی و بازبینی حرفه‌ای']]},
+{id:'excel',name:'Microsoft Excel',icon:'📊',color:'#16865b',cat:'office',desc:'فرمول، توابع، تحلیل داده، PivotTable و داشبورد.',levels:[
+['سلول، محدوده و قالب‌بندی','SUM، AVERAGE و توابع پایه','مرتب‌سازی، فیلتر و جدول‌ها'],
+['IF، COUNTIF و SUMIF','توابع جست‌وجو و ارجاع','نمودار و قالب‌بندی شرطی'],
+['PivotTable و PivotChart','پاک‌سازی داده و Power Query','داشبورد و آشنایی با ماکرو']]},
+{id:'outlook',name:'Microsoft Outlook',icon:'✉️',color:'#2376cb',cat:'office',desc:'مدیریت ایمیل، تقویم، جلسه و گردش کار.',levels:[
+['ساختار ایمیل حرفه‌ای','پوشه‌ها و دسته‌بندی','جست‌وجو و مدیریت صندوق'],
+['تقویم و دعوت جلسه','قواعد و Quick Steps','وظایف و پیگیری'],
+['مدیریت بار کاری','اشتراک‌گذاری تقویم','امنیت ایمیل و گردش کار']]},
+{id:'onenote',name:'Microsoft OneNote',icon:'📒',color:'#7953bf',cat:'office',desc:'یادداشت‌برداری ساختارمند و مدیریت دانش شخصی.',levels:[
+['دفتر، بخش و صفحه','یادداشت‌برداری مؤثر','برچسب و جست‌وجو'],
+['قالب صفحه و ساختار درس','تصویر، فایل و لینک','همکاری و سازمان‌دهی'],
+['سیستم دانش شخصی','آرشیو و مرور دوره‌ای','ساخت دفترچه مرجع']]},
+{id:'access',name:'Microsoft Access',icon:'🗃️',color:'#c74b66',cat:'office',desc:'طراحی رابطه‌ای داده‌ها، پرس‌وجو، فرم و گزارش.',levels:[
+['جدول و نوع داده','کلید اصلی و رکورد','طراحی ساختار داده'],
+['ارتباط بین جدول‌ها','Query و معیارها','فرم‌ها و گزارش‌ها'],
+['پرس‌وجوهای چندجدولی','اعتبارسنجی و یکپارچگی','طراحی پروژه پایگاه داده']]},
+{id:'canva',name:'Canva Design',icon:'🖌️',color:'#6557f5',cat:'design',desc:'طراحی پوستر، برند، ارائه و محتوای بصری.',levels:[
+['اصول طراحی و ترکیب‌بندی','رنگ و تایپوگرافی','قالب و عناصر بصری'],
+['پوستر و شبکه اجتماعی','ارائه و اینفوگرافیک','هویت بصری یکپارچه'],
+['سیستم طراحی و قالب‌ها','خروجی برای رسانه‌های مختلف','پروژه برند و بازبینی']]},
+{id:'google',name:'Google Workspace',icon:'🌐',color:'#4285f4',cat:'google',desc:'Docs، Sheets، Slides، Drive و همکاری ابری.',levels:[
+['Drive و ساختار پوشه','Docs و قالب‌بندی','اشتراک‌گذاری امن'],
+['Sheets و توابع','Slides و ارائه','نظرها و همکاری'],
+['فرایند همکاری ابری','فرم و جمع‌آوری پاسخ','پروژه یکپارچه گروهی']]},
+{id:'teams',name:'Microsoft Teams',icon:'👥',color:'#6264a7',cat:'team',desc:'جلسه آنلاین، کانال، فایل و هماهنگی تیمی.',levels:[
+['تیم، کانال و گفتگو','جلسه و دعوت‌نامه','فایل و اشتراک‌گذاری'],
+['مدیریت جلسه مؤثر','همکاری روی اسناد','وظایف و هماهنگی'],
+['ساختار تیمی پروژه','قواعد دسترسی و نظم','گردش کار گروهی']]},
+{id:'ai',name:'AI & Smart Learning',icon:'🤖',color:'#8b5cf6',cat:'tech',desc:'مهندسی درخواست، یادگیری با AI و راستی‌آزمایی.',levels:[
+['شناخت توانایی‌ها و محدودیت‌ها','درخواست دقیق و هدفمند','خلاصه‌سازی و توضیح'],
+['الگوهای Prompt','تحقیق و راستی‌آزمایی','تولید پیش‌نویس و بازبینی'],
+['گردش کار چندمرحله‌ای','ارزیابی کیفیت خروجی','حریم خصوصی و استفاده مسئولانه']]},
+{id:'windows',name:'مهارت‌های دیجیتال',icon:'💻',color:'#0e9ea9',cat:'tech',desc:'مدیریت فایل، امنیت، پشتیبان‌گیری و بهره‌وری.',levels:[
+['فایل و پوشه','میانبرهای کاربردی','تنظیمات و نگهداری'],
+['بهره‌وری و سازمان‌دهی','پشتیبان‌گیری','امنیت حساب‌ها'],
+['عیب‌یابی مقدماتی','نظم دیجیتال پیشرفته','چک‌لیست نگهداری سیستم']]}
 ];
 
-let activeCategory='all';
-let currentCourse=null;
-let currentLesson=0;
-let progress=loadProgress();
+const detail={
+word:{
+'قلم و پاراگراف':['قالب متن باید خوانایی را بهتر کند، نه اینکه صرفاً تزئینی باشد. برای سند فارسی، راست‌چین بودن پاراگراف، فاصله خطوط مناسب و استفاده محدود از قلم‌ها اهمیت دارد.','یک عنوان، دو زیرعنوان و سه پاراگراف بساز. اندازه و وزن تیترها را یکسان نگه دار و فاصله پاراگراف‌ها را از تنظیمات Paragraph کنترل کن.','برای تغییر یکدست متن، از Style استفاده کن؛ تغییر دستی تک‌تک عنوان‌ها در اسناد طولانی خطاپذیر است.'],
+'سبک‌ها و فهرست خودکار':['سبک‌های Heading ساختار منطقی سند را تعریف می‌کنند. فهرست خودکار می‌تواند عنوان‌ها و شماره صفحه‌ها را از همین ساختار بخواند.','عنوان اصلی را Heading 1 و بخش‌های فرعی را Heading 2 قرار بده. از References فهرست مطالب را درج کن؛ بعد از تغییر متن، آن را Update کن.','اگر فقط ظاهر عنوان را با Bold تغییر دهی ولی Style مناسب نداشته باشد، ممکن است در فهرست خودکار ظاهر نشود.'],
+'صفحه‌آرایی و حاشیه‌ها':['حاشیه‌ها، اندازه کاغذ، جهت صفحه و شکست صفحه بر خروجی چاپی اثر می‌گذارند.','از Layout اندازه کاغذ و حاشیه‌ها را تنظیم کن. برای شروع فصل جدید از Page Break استفاده کن، نه چندین بار فشردن Enter.','Section Break اجازه می‌دهد بخش‌های مختلف سند تنظیمات متفاوت داشته باشند.'],
+'جدول‌ها، تصاویر و کپشن':['جدول اطلاعات مرتبط را منظم می‌کند. کپشن عنوانی قابل ارجاع برای شکل یا جدول است.','جدول درج کن، سرستون واضح بنویس و عرض ستون‌ها را بررسی کن. تصویر را اضافه کن و گزینه‌های Wrap Text را امتحان کن.','برای سندهای طولانی از Caption و Cross-reference استفاده کن تا شماره شکل‌ها با تغییر سند قابل مدیریت باشد.'],
+'سرصفحه، پاصفحه و بخش‌بندی':['Header و Footer برای اطلاعات تکرارشونده مانند عنوان یا شماره صفحه کاربرد دارند. Section Break می‌تواند تنظیمات صفحه را در بخش‌های مختلف جدا کند.','شماره صفحه اضافه کن و گزینه Different First Page را بررسی کن. برای یک بخش افقی در میان صفحات عمودی، بخش‌بندی را تمرین کن.','پیش از تغییر Header یا Footer بررسی کن Link to Previous فعال است یا نه؛ این تنظیم روی ارتباط بخش‌ها اثر دارد.'],
+'ارجاع‌ها و منابع':['در گزارش‌های پژوهشی، منبع‌دهی روشن به خواننده اجازه می‌دهد منبع ادعاها را بررسی کند.','از تب References برای مدیریت Citation و Bibliography استفاده کن و سبک ارجاع موردنیاز معلم یا سازمان را انتخاب کن.','فهرست منابع خودکار جایگزین بررسی صحت اطلاعات کتاب‌شناختی نیست؛ نام نویسنده، عنوان و تاریخ را بازبینی کن.'],
+'Mail Merge و قالب‌ها':['Mail Merge برای تولید اسناد شخصی‌سازی‌شده از یک فهرست داده استفاده می‌شود؛ مثلاً نامه‌های جداگانه برای افراد مختلف.','یک جدول آزمایشی با نام و عنوان بساز، سند اصلی را آماده کن و فیلدهای ادغام را وارد کن. قبل از خروجی نهایی پیش‌نمایش را ببین.','برای جلوگیری از اشتباه، رکوردهای نمونه و قالب تاریخ و عدد را قبل از تولید دسته‌ای آزمایش کن.'],
+'بازبینی پیشرفته و سند نهایی':['Track Changes، Comment و بررسی سازگاری به بازبینی گروهی کمک می‌کنند. نسخه نهایی باید از نظر ساختار، نگارش و خروجی بررسی شود.','تغییرات را ثبت کن، نظرها را پاسخ بده و نسخه نهایی را ذخیره کن. سپس خروجی PDF را باز کن و شکست صفحه‌ها را بررسی کن.','قبل از ارسال سند محرمانه، اطلاعات پنهان و داده‌های شخصی احتمالی را بررسی کن.']
+},
+excel:{
+'SUM، AVERAGE و توابع پایه':['فرمول در Excel معمولاً با علامت مساوی آغاز می‌شود. SUM جمع، AVERAGE میانگین، MIN کمترین و MAX بیشترین مقدار را محاسبه می‌کنند.','اگر نمره‌ها در C2 تا C11 هستند، =AVERAGE(C2:C11) میانگین را محاسبه می‌کند. سپس نتیجه را با محاسبه دستی چند مقدار کنترل کن.','از محدوده‌های روشن و جدول‌های دارای سرستون استفاده کن تا فرمول‌ها هنگام گسترش داده‌ها قابل‌اعتمادتر باشند.'],
+'IF، COUNTIF و SUMIF':['IF بر اساس یک شرط نتیجه متفاوت می‌دهد. COUNTIF موارد مطابق معیار را می‌شمارد و SUMIF مقادیر مربوط به معیار را جمع می‌کند.','نمونه: =IF(B2>=10,"قبول","نیاز به تلاش"). در بعضی تنظیمات منطقه‌ای باید به‌جای ویرگول از نقطه‌ویرگول استفاده کنی.','شرط‌ها را با مقادیر مرزی آزمایش کن؛ برای مثال دقیقاً برابر با حد قبولی و یک مقدار پایین‌تر.'],
+'توابع جست‌وجو و ارجاع':['توابع جست‌وجو مقدار مرتبط را از جدول پیدا می‌کنند. XLOOKUP در نسخه‌های پشتیبان‌شده گزینه‌ای انعطاف‌پذیر است؛ VLOOKUP نیز در نسخه‌های زیادی وجود دارد.','یک جدول شناسه و نام بساز. شناسه‌ای را جست‌وجو کن و نام متناظر را برگردان. حالت پیدا نشدن مقدار را هم مدیریت کن.','قبل از جست‌وجو بررسی کن شناسه‌ها تکراری یا دارای فاصله اضافی نباشند و نوع داده دو طرف یکسان باشد.'],
+'نمودار و قالب‌بندی شرطی':['نمودار مناسب باید سؤال مشخصی را پاسخ دهد. قالب‌بندی شرطی الگوها و موارد غیرعادی را برجسته می‌کند.','داده را انتخاب کن، نمودار ستونی یا خطی مناسب بساز و عنوان معنادار اضافه کن. یک قانون رنگی برای مقدارهای مهم تعریف کن.','از نمودار سه‌بعدی یا رنگ‌های زیاد وقتی باعث دشوار شدن مقایسه می‌شوند پرهیز کن.'],
+'PivotTable و PivotChart':['PivotTable خلاصه‌سازی داده‌ها بر اساس دسته‌ها را ساده می‌کند. برای گزارش‌های بزرگ، امکان گروه‌بندی و مقایسه فراهم می‌شود.','یک جدول دارای تاریخ، دسته و مبلغ بساز. PivotTable درج کن، دسته را در Rows و مبلغ را در Values قرار بده.','پس از افزودن داده جدید، منبع داده و Refresh را بررسی کن؛ PivotTable همیشه در همه تنظیمات به‌طور خودکار به‌روز نمی‌شود.'],
+'پاک‌سازی داده و Power Query':['داده‌های تکراری، فاصله اضافی، قالب‌های متفاوت تاریخ و مقادیر خالی می‌توانند نتایج تحلیل را خراب کنند. Power Query در نسخه‌های پشتیبان‌شده برای تبدیل و پاک‌سازی داده‌ها کاربرد دارد.','داده خام را وارد کن، نوع ستون‌ها را بررسی کن، فاصله‌ها و موارد تکراری را مدیریت کن و مراحل تبدیل را ثبت کن.','داده خام را حفظ کن و مراحل پاک‌سازی را مستند کن تا نتیجه قابل بازتولید باشد.'],
+'داشبورد و آشنایی با ماکرو':['داشبورد چند شاخص کلیدی را در یک نما نشان می‌دهد. ماکروها می‌توانند کارهای تکراری را خودکار کنند، اما فایل‌های دارای ماکرو باید با احتیاط بررسی شوند.','سه شاخص کلیدی تعریف کن، نمودارهای مرتبط بساز و چیدمان را ساده نگه دار. در صورت نیاز ماکرو را فقط در فایل آزمایشی و محیط مورد اعتماد بررسی کن.','قبل از اجرای ماکرو ناشناس، منبع و کد آن را بررسی کن؛ ماکرو می‌تواند عملیات ناخواسته انجام دهد.']
+},
+powerpoint:{
+'قالب و هماهنگی بصری':['یک ارائه خوب از سلسله‌مراتب بصری استفاده می‌کند: مخاطب باید سریع تشخیص دهد عنوان، پیام اصلی و جزئیات کدام‌اند.','برای کل ارائه یک پالت محدود، سبک عنوان ثابت و چیدمان هماهنگ انتخاب کن. متن هر اسلاید را به نکات اصلی کاهش بده.','برای اصلاح یکپارچه ارائه، از Slide Master استفاده کن؛ تغییر جداگانه هر اسلاید باعث ناسازگاری می‌شود.'],
+'Slide Master و قالب سفارشی':['Slide Master کنترل مرکزی برای عناصر مشترک، قلم‌ها، رنگ‌ها و چیدمان‌ها فراهم می‌کند.','از View وارد Slide Master شو، لوگو یا عنوان ثابت را قرار بده و یک Layout اختصاصی بساز. سپس آن را روی چند اسلاید آزمایش کن.','بعد از تغییر Master، اسلایدهای قدیمی ممکن است نیاز به اعمال مجدد Layout داشته باشند.'],
+'انیمیشن و زمان‌بندی':['انیمیشن برای هدایت توجه مفید است؛ افکت زیاد و زمان‌بندی نامناسب پیام را پنهان می‌کند.','یک عنصر را انتخاب کن، انیمیشن ساده اعمال کن و ترتیب اجرا را در Animation Pane تنظیم کن.','ارائه را روی دستگاه مقصد آزمایش کن؛ فونت، رسانه و نسخه برنامه می‌توانند رفتار را تغییر دهند.'],
+'پیوندها و ارائه تعاملی':['پیوند داخلی میان اسلایدها می‌تواند منو، آزمون و مسیرهای انتخابی بسازد.','یک اسلاید فهرست طراحی کن و هر گزینه را به اسلاید مرتبط پیوند بده. برای بازگشت نیز دکمه‌ای در نظر بگیر.','همه مسیرهای تعاملی را قبل از ارائه آزمایش کن و یک مسیر جایگزین برای شرایط غیرمنتظره داشته باش.']
+},
+ai:{
+'درخواست دقیق و هدفمند':['یک درخواست خوب هدف، مخاطب، زمینه، قالب خروجی و محدودیت‌ها را روشن می‌کند. هرچه معیار موفقیت دقیق‌تر باشد، ارزیابی نتیجه آسان‌تر است.','به‌جای «درباره اکسل توضیح بده»، بنویس «برای مبتدی، سه کاربرد تابع IF را با مثال‌های کوتاه و یک تمرین توضیح بده».','از مدل بخواه فرض‌های نامشخص را بیان کند؛ با این حال پاسخ آن را حقیقت قطعی تلقی نکن.'],
+'تحقیق و راستی‌آزمایی':['مدل‌های هوش مصنوعی ممکن است اطلاعات نادرست یا منابع ناموجود تولید کنند. برای ادعاهای مهم باید منبع مستقل بررسی شود.','یک ادعا را انتخاب کن، نام دقیق منبع و تاریخ را بررسی کن و آن را با یک مرجع معتبر مستقل مقایسه کن.','برای داده‌های حساس، پزشکی، حقوقی یا مالی به پاسخ مدل به‌تنهایی تکیه نکن.'],
+'حریم خصوصی و استفاده مسئولانه':['اطلاعات شخصی، رمز عبور، اطلاعات محرمانه مدرسه یا خانواده و اسناد خصوصی را در ابزارهای عمومی وارد نکن.','قبل از بارگذاری فایل، بررسی کن چه اطلاعاتی در آن وجود دارد و سیاست حریم خصوصی سرویس چیست.','خروجی تولیدشده را بازبینی کن و در کارهای آموزشی، از قواعد معلم درباره کمک گرفتن از AI پیروی کن.'],
+'گردش کار چندمرحله‌ای':['کار پیچیده را به مراحل کوچک‌تر تقسیم کن: تعریف مسئله، ساخت پیش‌نویس، نقد، اصلاح و بررسی نهایی.','از مدل بخواه ابتدا طرح ارائه کند، سپس هر بخش را جداگانه توسعه دهد و در پایان موارد نیازمند راستی‌آزمایی را فهرست کند.','برای سنجش کیفیت، معیارهای ثابت مانند صحت، کامل بودن، وضوح و تناسب با مخاطب تعیین کن.']
+}
+};
 
-function loadProgress(){
- try{return JSON.parse(localStorage.getItem('oax-progress')||'{}')}catch(e){return {}}
+const general={
+'مقدماتی':{
+intro:'در این مرحله هدف شناخت ابزار، اصطلاحات اصلی و انجام کارهای پایه به شکل درست است.',
+steps:['محیط برنامه و بخش‌های اصلی را شناسایی کن.','یک فایل تمرینی بساز و با گزینه‌های پایه کار کن.','فایل را با نام مشخص ذخیره کن و نتیجه را بازبینی کن.'],
+tip:'در ابتدای کار، یک فایل آزمایشی داشته باش تا بدون نگرانی گزینه‌ها را امتحان کنی.'
+},
+'متوسط':{
+intro:'در این سطح باید چند قابلیت را در کنار هم به کار ببری، خطاها را پیدا کنی و نتیجه‌ای منظم بسازی.',
+steps:['یک مسئله واقعی یا نمونه انتخاب کن.','دو یا چند ابزار مرتبط را با هم استفاده کن.','نتیجه را با معیار مشخص بررسی و اصلاح کن.'],
+tip:'میان‌بُرها مفیدند، اما ابتدا باید دلیل انجام هر مرحله را درک کنی.'
+},
+'پیشرفته':{
+intro:'سطح پیشرفته بر طراحی راه‌حل قابل‌اعتماد، نگهداری آسان، کنترل خطا و انتخاب روش مناسب تمرکز دارد.',
+steps:['نیازها و محدودیت‌های پروژه را مستند کن.','راه‌حل را روی داده یا نمونه آزمایشی پیاده‌سازی کن.','نتیجه، خطاها، دسترسی‌ها و روش نگهداری را بررسی کن.'],
+tip:'یک راه‌حل پیشرفته باید علاوه بر درست کار کردن، قابل توضیح، قابل آزمایش و قابل نگهداری باشد.'
 }
-function saveProgress(){
- try{localStorage.setItem('oax-progress',JSON.stringify(progress))}catch(e){toast('ذخیره محلی در این مرورگر در دسترس نیست.')}
-}
-function completedCount(){return Object.values(progress).filter(Boolean).length}
-function totalLessons(){return courses.reduce((n,c)=>n+c.lessons.length,0)}
-function pct(){return Math.round(completedCount()/totalLessons()*100)}
-function faNum(n){return Number(n).toLocaleString('fa-IR')}
+};
+
+const extraDetail={
+'Outlook':'برای ایمیل، تقویم و وظایف از دسته‌بندی روشن و قواعد ساده شروع کن. قوانین خودکار را ابتدا روی نمونه‌ها آزمایش کن تا ایمیل مهم اشتباهاً منتقل یا حذف نشود.',
+'OneNote':'ساختار دفترها را مطابق موضوع و نیاز مرور طراحی کن. نام‌گذاری یکسان، برچسب‌های محدود و مرور دوره‌ای از شلوغ شدن یادداشت‌ها جلوگیری می‌کنند.',
+'Access':'قبل از ساخت جدول، موجودیت‌ها، فیلدها و رابطه‌ها را طراحی کن. کلید اصلی، نوع داده و قواعد اعتبارسنجی را روشن کن و با داده‌های نمونه آزمایش بگیر.',
+'Canva':'پیش از طراحی، مخاطب، پیام، محل انتشار و اندازه خروجی را مشخص کن. تضاد رنگ، خوانایی، مجوز استفاده از تصویر و یکپارچگی بصری را در بازبینی نهایی بررسی کن.',
+'Google':'در همکاری ابری، مالکیت فایل، سطح دسترسی، نام‌گذاری و تاریخچه تغییرات مهم‌اند. دسترسی را فقط به افرادی بده که واقعاً به فایل نیاز دارند.',
+'Teams':'جلسه و کانال باید هدف مشخص داشته باشند. دستور جلسه، نقش‌ها، تصمیم‌های نهایی و مسئول هر اقدام را ثبت کن تا همکاری قابل پیگیری باشد.',
+'مهارت‌های دیجیتال':'پیش از تغییر تنظیمات مهم یا حذف فایل، نسخه پشتیبان تهیه کن. برای عیب‌یابی، یک تغییر را در هر مرحله انجام بده و نتیجه را بررسی کن.'
+};
+
+let progress=readStore('oaxpro-progress',{});
+let favorites=readStore('oaxpro-favs',[]);
+let notes=readStore('oaxpro-notes',{});
+let activeCat='all',activeCourse=null,activeLesson=0;
+const $=id=>document.getElementById(id);
+function readStore(key,fallback){try{const x=localStorage.getItem(key);return x?JSON.parse(x):fallback}catch(e){return fallback}}
+function writeStore(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch(e){notify('مرورگر اجازه ذخیره اطلاعات را نداد.');return false}}
+function fa(n){return Number(n).toLocaleString('fa-IR')}
+function total(){return definitions.reduce((sum,c)=>sum+9,0)}
+function key(id,i){return id+'-'+i}
+function isDone(id,i){return !!progress[key(id,i)]}
+function courseDone(c){return c.levels.flat().filter((_,i)=>isDone(c.id,i)).length}
+function coursePercent(c){return Math.round(courseDone(c)/9*100)}
+function allDone(){return Object.values(progress).filter(Boolean).length}
+function percent(){return Math.round(allDone()/total()*100)}
+function allLessons(c){return c.levels.flat().map((title,i)=>({title,level:Math.floor(i/3),index:i}))}
+
 function renderCourses(){
- const q=document.getElementById('searchInput').value.trim().toLowerCase();
- const level=document.getElementById('levelSelect').value;
- const list=courses.filter(c=>
-  (activeCategory==='all'||c.cat===activeCategory)&&
-  (level==='all'||c.level===level)&&
-  (c.name+' '+c.short+' '+c.desc+' '+c.lessons.map(l=>l[0]).join(' ')).toLowerCase().includes(q)
- );
- const grid=document.getElementById('courseGrid');
- if(!list.length){grid.innerHTML='<div class="empty">🔎 دوره‌ای پیدا نشد. عبارت جست‌وجو یا فیلتر را تغییر بده.</div>';return}
- grid.innerHTML=list.map(c=>{
-  const done=c.lessons.filter((_,i)=>progress[c.id+'-'+i]).length;
-  const p=Math.round(done/c.lessons.length*100);
-  return `<article class="course-card">
-   <div class="card-top"><div class="app-icon" style="background:${c.color}18;color:${c.color}">${c.icon}</div><span class="level">${c.level}</span></div>
+ let q=$('search').value.trim().toLowerCase();
+ let level=$('levelFilter').value;
+ let arr=definitions.filter(c=>{
+  let favorite=activeCat==='fav';
+  let category=favorite?favorites.includes(c.id):(activeCat==='all'||c.cat===activeCat);
+  let text=(c.name+' '+c.desc+' '+c.levels.flat().join(' ')).toLowerCase().includes(q);
+  let levelMatch=level==='all'||c.levels[Math.max(0,['مقدماتی','متوسط','پیشرفته'].indexOf(level))]!==undefined;
+  return category&&text&&levelMatch;
+ });
+ if($('sortFilter').value==='progress')arr.sort((a,b)=>coursePercent(b)-coursePercent(a));
+ if($('sortFilter').value==='name')arr.sort((a,b)=>a.name.localeCompare(b.name));
+ $('courseGrid').innerHTML=arr.length?arr.map(c=>{
+  const done=courseDone(c),p=coursePercent(c),fav=favorites.includes(c.id);
+  return `<article class="course">
+   <div class="course-top"><div class="app-icon" style="background:${c.color}19;color:${c.color}">${c.icon}</div><button class="star ${fav?'on':''}" onclick="toggleFavorite('${c.id}')" aria-label="علاقه‌مندی">${fav?'★':'☆'}</button></div>
    <h3>${c.name}</h3><p>${c.desc}</p>
-   <div class="course-meta"><span>📚 ${faNum(c.lessons.length)} درس</span><span>⏱ ${c.time}</span></div>
-   <div class="card-progress"><span style="width:${p}%"></span></div>
-   <div class="card-bottom"><small>${faNum(done)} از ${faNum(c.lessons.length)} درس · ${faNum(p)}٪</small><button class="btn btn-primary" onclick="openCourse('${c.id}')">${done?'ادامه دوره':'شروع دوره'} ←</button></div>
+   <div class="tags"><span class="tag">مقدماتی</span><span class="tag">متوسط</span><span class="tag">پیشرفته</span><span class="tag">۹ درس</span></div>
+   <div style="margin-top:13px" class="progress"><span style="width:${p}%"></span></div>
+   <div class="course-bottom"><small>${fa(done)} از ۹ درس · ${fa(p)}٪</small><button class="btn primary" onclick="openCourse('${c.id}')">${done?'ادامه':'شروع'} ←</button></div>
   </article>`;
- }).join('');
+ }).join(''):'<div class="empty">🔎 دوره‌ای پیدا نشد. فیلترها را تغییر بده.</div>';
+}
+function renderBadges(){
+ const n=allDone();
+ const badges=[['🌱','اولین قدم',n>=1],['📚','۵ درس',n>=5],['🔥','۱۵ درس',n>=15],['🏆','یک دوره کامل',definitions.some(c=>courseDone(c)===9)],['💎','نیمی از درس‌ها',n>=Math.ceil(total()/2)],['👑','همه درس‌ها',n===total()]];
+ $('badges').innerHTML=badges.map(b=>`<div class="panel-row" style="opacity:${b[2]?1:.42}"><span class="mini">${b[0]}</span><div><strong>${b[1]}</strong><small>${b[2]?'دریافت شد':'هنوز قفل است'}</small></div></div>`).join('');
+}
+function renderContinue(){
+ let last=readStore('oaxpro-last',null);
+ if(!last||!definitions.some(c=>c.id===last.id)){
+  $('continueBox').innerHTML='<p>یک دوره را باز کن تا از همین‌جا به آخرین درس برگردی.</p>';return;
+ }
+ const c=definitions.find(c=>c.id===last.id);
+ const lesson=allLessons(c)[last.index]||allLessons(c)[0];
+ $('continueBox').innerHTML=`<div class="panel-row"><span class="mini">${c.icon}</span><div><strong>${c.name}</strong><small>${lesson.title}</small></div></div><button class="btn primary" style="width:100%;margin-top:10px" onclick="openCourse('${c.id}',${last.index})">ادامه درس ←</button>`;
 }
 function renderStats(){
- const done=completedCount(),percent=pct();
- document.getElementById('statCourses').textContent=faNum(courses.length);
- document.getElementById('statLessons').textContent=faNum(totalLessons())+'+';
- document.getElementById('statDone').textContent=faNum(done);
- document.getElementById('statPercent').textContent=faNum(percent)+'٪';
- document.getElementById('heroProgress').style.width=percent+'%';
- document.getElementById('heroProgressText').textContent=faNum(percent)+'٪';
- document.getElementById('progressBig').textContent=faNum(percent)+'٪';
- document.getElementById('mainProgress').style.width=percent+'%';
- document.getElementById('progressMessage').textContent=done===0?'هنوز درسی را تکمیل نکرده‌ای؛ اولین درس را شروع کن!':done===totalLessons()?'عالی است! همه درس‌های این نسخه را تکمیل کرده‌ای.':`${faNum(done)} درس از ${faNum(totalLessons())} درس را تکمیل کرده‌ای. ادامه بده!`;
- renderCourses();
+ const n=allDone(),p=percent();
+ $('sCourses').textContent=fa(definitions.length);
+ $('sLessons').textContent=fa(total());
+ $('sDone').textContent=fa(n);
+ $('sPct').textContent=fa(p)+'٪';
+ $('heroCourseCount').textContent=fa(definitions.length);
+ $('heroLessonCount').textContent=fa(total());
+ $('heroBar').style.width=p+'%';
+ $('heroPct').textContent=fa(p)+'٪';
+ $('bigPct').textContent=fa(p)+'٪';
+ $('mainBar').style.width=p+'%';
+ $('progressMessage').textContent=n===0?'اولین درس را شروع کن و مسیر خودت را بساز.':n===total()?'تبریک! همه درس‌های این نسخه را تکمیل کرده‌ای.':`${fa(n)} درس از ${fa(total())} درس تکمیل شده است.`;
+ renderBadges();renderContinue();renderCourses();
 }
-function openCourse(id){
- currentCourse=courses.find(c=>c.id===id);
- if(!currentCourse)return;
- const firstIncomplete=currentCourse.lessons.findIndex((_,i)=>!progress[id+'-'+i]);
- currentLesson=firstIncomplete===-1?0:firstIncomplete;
- document.getElementById('modalBackdrop').classList.add('open');
+function toggleFavorite(id){
+ favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];
+ writeStore('oaxpro-favs',favorites);renderCourses();notify('فهرست علاقه‌مندی‌ها به‌روزرسانی شد.');
+}
+function lessonDetail(c,title,index){
+ let lvl=Math.floor(index/3),levelName=['مقدماتی','متوسط','پیشرفته'][lvl];
+ let specific=detail[c.id]&&detail[c.id][title];
+ let intro=specific?specific[0]:general[levelName].intro+' در این درس از مسیر '+c.name+' موضوع «'+title+'» را یاد می‌گیری.';
+ let steps=specific?specific[1]:general[levelName].steps.join(' ')+` موضوع تمرین: ${title}.`;
+ let tip=specific?specific[2]:(extraDetail[c.name]||general[levelName].tip);
+ let task=`یک فایل یا نمونه مستقل درباره «${title}» بساز. نتیجه را با یک چک‌لیست بررسی کن و دو موردی را که می‌توانی بهتر کنی یادداشت کن.`;
+ let quiz=quizFor(c.id,title,lvl);
+ return {levelName,intro,steps,tip,task,quiz};
+}
+function quizFor(id,title,lvl){
+ const bank={
+ word:[['برای ساخت فهرست خودکار کدام روش بهتر است؟',['تغییر دستی اندازه عنوان','استفاده از Headingها','فشردن مکرر Enter'],1],['برای تولید نامه‌های شخصی‌سازی‌شده از داده‌ها چه قابلیتی مناسب است؟',['Mail Merge','WordArt','Zoom'],0]],
+ excel:[['کدام تابع برای میانگین استفاده می‌شود؟',['AVERAGE','MAX','COUNT فقط'],0],['PivotTable معمولاً چه کمکی می‌کند؟',['خلاصه‌سازی و تحلیل داده','ویرایش تصویر','ارسال ایمیل'],0]],
+ powerpoint:[['Slide Master برای چیست؟',['مدیریت یکپارچه طراحی اسلایدها','محاسبه میانگین','ذخیره رمز عبور'],0],['کدام اصل به ارائه بهتر کمک می‌کند؟',['یک پیام روشن در هر اسلاید','متن بسیار زیاد','افکت‌های متعدد'],0]],
+ ai:[['چرا باید پاسخ هوش مصنوعی را بررسی کرد؟',['ممکن است نادرست باشد','همیشه بدون خطاست','منبع را همیشه تضمین می‌کند'],0],['کدام اطلاعات را نباید در ابزار عمومی وارد کرد؟',['رمز و اطلاعات محرمانه','موضوع عمومی','پرسش غیرشخصی'],0]],
+ windows:[['قبل از حذف فایل مهم چه کاری مناسب است؟',['بررسی و تهیه نسخه پشتیبان در صورت نیاز','حذف همه پوشه‌ها','خاموش کردن نمایشگر'],0]],
+ access:[['کلید اصلی در جدول چه نقشی دارد؟',['شناسایی یکتای رکورد','تغییر رنگ پنجره','ساخت انیمیشن'],0]],
+ canva:[['پیش از طراحی پوستر چه چیزی را مشخص کنیم؟',['مخاطب و پیام','تعداد تصادفی رنگ‌ها','اندازه نامرتبط'],0]],
+ google:[['قبل از اشتراک فایل چه چیزی را بررسی کنیم؟',['سطح دسترسی','رنگ پس‌زمینه','اندازه موس'],0]],
+ teams:[['دستور جلسه چه فایده‌ای دارد؟',['هدفمند کردن جلسه','حذف خودکار فایل','نمایش رمزها'],0]],
+ outlook:[['موضوع ایمیل حرفه‌ای چگونه است؟',['روشن و مرتبط','خالی','نامرتبط'],0]],
+ onenote:[['ساختار رایج OneNote کدام است؟',['دفتر، بخش و صفحه','فقط ردیف و ستون','اسلاید و انیمیشن'],0]]
+ };
+ const q=(bank[id]||bank.windows)[lvl%((bank[id]||bank.windows).length)];
+ return {question:q[0],options:q[1],answer:q[2]};
+}
+function openCourse(id,index){
+ activeCourse=definitions.find(c=>c.id===id);if(!activeCourse)return;
+ const lessons=allLessons(activeCourse);
+ if(index===undefined){index=lessons.findIndex((l,i)=>!isDone(id,i));if(index<0)index=0;}
+ activeLesson=Math.max(0,Math.min(index,8));
+ writeStore('oaxpro-last',{id,index:activeLesson});
+ $('modalBg').classList.add('open');
  renderLesson();
 }
 function renderLesson(){
- const c=currentCourse,l=c.lessons[currentLesson];
- document.getElementById('modalKicker').textContent=c.name.toUpperCase()+' · '+c.level;
- document.getElementById('modalTitle').textContent=l[0];
- document.getElementById('lessonNav').innerHTML=c.lessons.map((x,i)=>`<button class="${i===currentLesson?'active':''}" onclick="goLesson(${i})">${progress[c.id+'-'+i]?'✓ ':''}${faNum(i+1)}. ${x[0]}</button>`).join('');
- document.getElementById('modalContent').innerHTML=`
-  <div class="notice">📚 دوره: ${c.name} · درس ${faNum(currentLesson+1)} از ${faNum(c.lessons.length)}</div>
-  <h3>📖 توضیح درس</h3><p>${l[1]}</p>
-  <h3>🛠️ تمرین مرحله‌به‌مرحله</h3><p>${l[2]}</p>
-  <h3>🎯 مأموریت تو</h3><p>${l[3]}</p>
-  <h3>🧠 آزمون کوتاه</h3><p>به پرسش زیر پاسخ بده. برای پاسخ، روی یکی از گزینه‌ها کلیک کن.</p>
-  ${quizHTML(c.id,currentLesson)}
-  <div class="notice" style="margin-top:18px">💡 نکته: نام بعضی منوها در نسخه‌های مختلف نرم‌افزار ممکن است کمی متفاوت باشد.</div>`;
- const btn=document.getElementById('completeBtn');
- btn.textContent=progress[c.id+'-'+currentLesson]?'✓ این درس تکمیل شده':'✓ تکمیل این درس';
+ const c=activeCourse,l=allLessons(c)[activeLesson],d=lessonDetail(c,l.title,activeLesson);
+ $('modalSub').textContent=c.name+' · سطح '+d.levelName;
+ $('modalTitle').textContent=l.title;
+ $('lessonTabs').innerHTML=allLessons(c).map((x,i)=>`<button class="lesson-tab ${i===activeLesson?'active':''}" onclick="goLesson(${i})">${isDone(c.id,i)?'✓ ':''}${fa(i+1)}. ${x.title}</button>`).join('');
+ const q=d.quiz;
+ $('lessonBody').innerHTML=`
+ <div class="lesson-callout">📍 سطح: <b>${d.levelName}</b> · درس ${fa(activeLesson+1)} از ۹ · ${isDone(c.id,activeLesson)?'✓ تکمیل‌شده':'در حال یادگیری'}</div>
+ <h3>📖 ۱. توضیح مفهومی</h3><p>${d.intro}</p>
+ <h3>🛠️ ۲. راهنمای تمرین</h3><p>${d.steps}</p>
+ <ol>${general[d.levelName].steps.map(x=>`<li>${x}</li>`).join('')}</ol>
+ <h3>🎯 ۳. تمرین عملی</h3><div class="lesson-callout">${d.task}</div>
+ <h3>💎 ۴. نکته حرفه‌ای</h3><p>${d.tip}</p>
+ <h3>🧠 ۵. آزمون یادگیری</h3><p>${q.question}</p>
+ <div id="quizBox">${q.options.map((o,i)=>`<button class="quiz-option" onclick="answerQuiz(this,${i},${q.answer})">${String.fromCharCode(1575+i)}) ${o}</button>`).join('')}<p id="quizFeedback" style="font-size:12px;font-weight:800"></p></div>
+ <h3>📝 ۶. یادداشت شخصی</h3><p>نکته‌ای که می‌خواهی بعداً مرور کنی بنویس؛ یادداشت در همین مرورگر ذخیره می‌شود.</p>
+ <textarea id="notes" placeholder="نکته‌ها، سؤال‌ها و نتیجه تمرین من...">${escapeHTML(notes[key(c.id,activeLesson)]||'')}</textarea>
+ <button class="btn soft" style="margin-top:8px" onclick="saveNote()">💾 ذخیره یادداشت</button>
+ <h3>✅ ۷. چک‌لیست پایان درس</h3><div class="lesson-callout">${general[d.levelName].steps.map(x=>'☐ '+x).join('<br>')}</div>
+ <p>وقتی توضیحات را خواندی و تمرین را انجام دادی، درس را تکمیل کن و به مرحله بعد برو.</p>`;
+ $('completeBtn').textContent=isDone(c.id,activeLesson)?'✓ درس تکمیل شده':'✓ تکمیل این درس';
 }
-function quizHTML(id,i){
- const qs={
- word:[['Word بیشتر برای چه کاری استفاده می‌شود؟',['پردازش متن و ساخت سند','ویرایش فیلم','ساخت پایگاه داده'],0],['برای ساخت فهرست خودکار بهتر است از چه چیزی استفاده کنیم؟',['رنگ قلم','سبک‌های Heading','فاصله‌گذاری دستی'],1]],
- powerpoint:[['Transition چه کاری انجام می‌دهد؟',['تغییر بین اسلایدها','محاسبه میانگین','ساخت پوشه'],0],['کدام کار ارائه را خواناتر می‌کند؟',['متن بسیار زیاد','چندین فونت نامرتبط','یک ایده روشن در هر اسلاید'],2]],
- excel:[['فرمول‌ها معمولاً با چه علامتی شروع می‌شوند؟',['#','= ','@'],1],['برای محاسبه میانگین از کدام تابع استفاده می‌شود؟',['SUM','AVERAGE','MAX'],1]],
- outlook:[['موضوع ایمیل حرفه‌ای باید چگونه باشد؟',['واضح و مرتبط','خالی','کاملاً نامرتبط'],0],['تقویم دیجیتال چه کاربردی دارد؟',['ویرایش عکس','برنامه‌ریزی رویدادها','ساخت نمودار'],1]],
- onenote:[['ساختار رایج OneNote چیست؟',['پوشه و فایل فشرده','دفتر، بخش و صفحه','ردیف و ستون فقط'],1]],
- access:[['کلید اصلی چه کاربردی دارد؟',['مشخص کردن یکتای رکورد','تغییر رنگ جدول','ارسال ایمیل'],0]],
- canva:[['چرا باید فضای خالی در طراحی داشته باشیم؟',['برای سخت‌تر شدن خواندن','برای تمرکز و خوانایی بهتر','برای پر کردن همه فضا'],1]],
- google:[['پیش از اشتراک‌گذاری فایل چه چیزی را بررسی کنیم؟',['سطح دسترسی','رنگ صفحه','اندازه نمایشگر مخاطب'],0]],
- teams:[['دستور جلسه چه کمکی می‌کند؟',['جلسه را هدفمندتر می‌کند','فایل‌ها را خودکار حذف می‌کند','رمزها را نمایش می‌دهد'],0]],
- windows:[['کدام میانبر معمولاً برای کپی استفاده می‌شود؟',['Ctrl+P','Ctrl+C','Ctrl+Z'],1]],
- ai:[['چرا باید پاسخ AI را بررسی کنیم؟',['چون ممکن است اشتباه کند','چون همیشه محرمانه است','چون هرگز متن تولید نمی‌کند'],0]]
- };
- const q=(qs[id]||[['تمرین این درس چه هدفی دارد؟',['تمرین عملی مهارت','نادیده گرفتن مراحل','حذف اطلاعات'],0]])[i%((qs[id]||[]).length||1)];
- const safe=JSON.stringify(q[2]);
- return `<div class="quiz" data-answer="${q[2]}">${q[1].map((a,j)=>`<button class="quiz-option" onclick="checkQuiz(this,${j},${safe})">${String.fromCharCode(1575+j)}) ${a}</button>`).join('')}<p class="quiz-feedback" style="font-weight:800"></p></div>`;
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function answerQuiz(btn,i,answer){
+ const box=$('quizBox');if(box.dataset.answered)return;box.dataset.answered='1';
+ const buttons=box.querySelectorAll('.quiz-option');buttons.forEach((b,j)=>{if(j===answer)b.classList.add('correct')});
+ if(i!==answer)btn.classList.add('wrong');
+ $('quizFeedback').textContent=i===answer?'آفرین! پاسخ درست است. 🎉':'پاسخ درست با رنگ سبز مشخص شده است. درس را دوباره مرور کن.';
+ $('quizFeedback').style.color=i===answer?'var(--green)':'#e05b75';
 }
-function checkQuiz(btn,index,answer){
- const box=btn.closest('.quiz');
- if(box.dataset.checked==='1')return;
- box.dataset.checked='1';
- const buttons=box.querySelectorAll('.quiz-option');
- buttons.forEach((b,i)=>{if(i===answer)b.classList.add('correct')});
- const feedback=box.querySelector('.quiz-feedback');
- if(index===answer){feedback.textContent='آفرین! پاسخ درست است. 🎉';feedback.style.color='var(--green)';}
- else{btn.classList.add('wrong');feedback.textContent='این گزینه درست نیست؛ پاسخ درست با رنگ سبز مشخص شده است.';feedback.style.color='#f56c6c';}
+function goLesson(i){activeLesson=Math.max(0,Math.min(8,i));writeStore('oaxpro-last',{id:activeCourse.id,index:activeLesson});renderLesson()}
+function completeLesson(){
+ const k=key(activeCourse.id,activeLesson);
+ progress[k]=true;writeStore('oaxpro-progress',progress);renderStats();renderLesson();notify('پیشرفت درس ذخیره شد! 🏆');
 }
-function goLesson(i){currentLesson=i;renderLesson()}
-function completeCurrentLesson(){
- const key=currentCourse.id+'-'+currentLesson;
- if(!progress[key]){progress[key]=true;saveProgress();renderStats();toast('درس با موفقیت تکمیل شد! 🎉')}
- else toast('این درس قبلاً تکمیل شده است.');
- renderLesson();
+function previousLesson(){if(activeLesson>0)goLesson(activeLesson-1);else notify('این اولین درس دوره است.')}
+function nextLesson(){if(activeLesson<8)goLesson(activeLesson+1);else{notify('به پایان مسیر این دوره رسیدی!');closeModal()}}
+function saveNote(){
+ notes[key(activeCourse.id,activeLesson)]=$('notes').value;
+ writeStore('oaxpro-notes',notes);notify('یادداشت ذخیره شد.');
 }
-function nextLesson(){
- if(currentLesson<currentCourse.lessons.length-1){currentLesson++;renderLesson()}
- else{toast('به پایان این دوره رسیدی! 🏆');closeModal()}
-}
-function closeModal(){document.getElementById('modalBackdrop').classList.remove('open')}
+function closeModal(){$('modalBg').classList.remove('open')}
 function continueLearning(){
- const c=courses.find(c=>c.lessons.some((_,i)=>!progress[c.id+'-'+i]));
- if(c)openCourse(c.id);else toast('همه درس‌ها را تکمیل کرده‌ای! آفرین 🏆');
+ const last=readStore('oaxpro-last',null);
+ if(last&&definitions.some(c=>c.id===last.id)){openCourse(last.id,last.index);return}
+ const c=definitions.find(c=>courseDone(c)<9);
+ if(c)openCourse(c.id);else notify('همه درس‌ها تکمیل شده‌اند! 👑');
 }
-function resetProgress(){
- if(confirm('مطمئنی می‌خواهی تمام پیشرفت ذخیره‌شده در این مرورگر پاک شود؟')){
-  progress={};saveProgress();renderStats();toast('پیشرفت بازنشانی شد.');
- }
+function exportProgress(){
+ const data={version:1,exportedAt:new Date().toISOString(),progress,favorites,notes};
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='office-academy-progress.json';a.click();URL.revokeObjectURL(url);
+ notify('فایل خروجی پیشرفت آماده شد.');
 }
-function toast(msg){
- const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
- clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),2600);
+function notify(msg){
+ $('toast').textContent=msg;$('toast').classList.add('show');
+ clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2600);
 }
-document.getElementById('searchInput').addEventListener('input',renderCourses);
-document.getElementById('levelSelect').addEventListener('change',renderCourses);
-document.getElementById('filters').addEventListener('click',e=>{
+$('search').addEventListener('input',renderCourses);
+$('levelFilter').addEventListener('change',renderCourses);
+$('sortFilter').addEventListener('change',renderCourses);
+$('filters').addEventListener('click',e=>{
  const b=e.target.closest('[data-cat]');if(!b)return;
- activeCategory=b.dataset.cat;
+ activeCat=b.dataset.cat;
  document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));
  renderCourses();
 });
-document.getElementById('themeBtn').addEventListener('click',()=>{
+$('themeBtn').addEventListener('click',()=>{
  document.body.classList.toggle('dark');
  const dark=document.body.classList.contains('dark');
- document.getElementById('themeBtn').textContent=dark?'☀️':'🌙';
- try{localStorage.setItem('oax-theme',dark?'dark':'light')}catch(e){}
+ $('themeBtn').textContent=dark?'☀️':'🌙';
+ writeStore('oaxpro-theme',dark?'dark':'light');
 });
-try{if(localStorage.getItem('oax-theme')==='dark'){document.body.classList.add('dark');document.getElementById('themeBtn').textContent='☀️'}}catch(e){}
-document.getElementById('modalBackdrop').addEventListener('click',e=>{if(e.target.id==='modalBackdrop')closeModal()});
+if(readStore('oaxpro-theme','light')==='dark'){document.body.classList.add('dark');$('themeBtn').textContent='☀️'}
+$('modalBg').addEventListener('click',e=>{if(e.target===$('modalBg'))closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-window.addEventListener('scroll',()=>{document.getElementById('backTop').style.display=window.scrollY>450?'block':'none'});
+window.addEventListener('scroll',()=>$('backTop').style.display=scrollY>400?'block':'none');
 renderStats();
 </script>
 </body>
